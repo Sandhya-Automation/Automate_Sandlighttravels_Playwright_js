@@ -1,0 +1,9 @@
+// validate the home elements
+
+Go to sandlighttravels home page
+1. validate the logo is displayed
+2. validate the login button is displayed
+3. validate the register button is displayed
+4. validate the search hotel bar is displayed.
+5. validate the city, check in and checkout, number of people and citizen ship is displayed
+

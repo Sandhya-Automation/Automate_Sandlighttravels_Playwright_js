@@ -1,0 +1,11 @@
+{
+    "admin": {
+        "username": "admin@sandlighttravels.co.uk",
+        "password": "test@123"
+    },
+    "user": {
+        "username": "testsltravels@gmail.com",
+        "password": "test@123"
+
+    }
+}

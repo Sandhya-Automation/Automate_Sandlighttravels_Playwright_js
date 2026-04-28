@@ -41,7 +41,7 @@ test.describe('Register negative test cases', () =>{
     expect(errorMsg).toContain("at least 8 characters")
   })
 
-  test.skip('Test 3: Missing email field', async({page})=>{
+  test('Test 3: Missing email field', async({page})=>{
     await page.goto("https://test.sandlighttravels.co.uk/register")
     await page.waitForTimeout(5000)
     
@@ -101,7 +101,7 @@ test.describe('Register negative test cases', () =>{
     expect(errorMsg).toContain("uppercase")
   })
 
-  test.skip('Test 7: Email too long', async({page})=>{
+  test('Test 7: Email too long', async({page})=>{
     await page.goto("https://test.sandlighttravels.co.uk/register")
     await page.waitForTimeout(5000)
     

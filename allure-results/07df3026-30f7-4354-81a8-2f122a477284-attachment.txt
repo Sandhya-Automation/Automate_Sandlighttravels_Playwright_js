@@ -1,0 +1,14 @@
+destination: Paris
+checkin: 2026-07-02
+day: 02
+month: 07
+year: 2026
+2026/07/02
+end date: 2026-07-07
+Number of nights: 5
+Adults: 2
+adults correct and skip to children
+Children: 2-12,9
+Children: 2
+child 12
+child 9

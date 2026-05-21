@@ -1,0 +1,9 @@
+destination: Paris
+checkin: 2026-07-02
+day: 02
+month: 07
+year: 2026
+2026/07/02
+end date: 2026-07-7
+Number of nights: 5
+Adults: 2

@@ -1,0 +1,1053 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: bookingStatusPage.spec.js >> Booking flow >> Valid booking hotel
+- Location: tests/bookingStatusPage.spec.js:9:1
+
+# Error details
+
+```
+TypeError: Cannot read properties of undefined (reading 'click')
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Sandlight Travels SandlightTravels" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Sandlight Travels" [ref=e5]
+        - heading "SandlightTravels" [level=1] [ref=e6]
+      - navigation [ref=e7]:
+        - link "Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "Hotels" [ref=e9] [cursor=pointer]:
+          - /url: /hotels/search
+        - button "Experiences expand_more" [ref=e11] [cursor=pointer]:
+          - text: Experiences
+          - generic [ref=e12]: expand_more
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about
+        - link "My Bookings" [ref=e14] [cursor=pointer]:
+          - /url: /account/bookings
+      - generic [ref=e15]:
+        - button "Toggle dark mode" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17]: dark_mode
+        - button "£ GBP expand_more" [ref=e19] [cursor=pointer]:
+          - generic [ref=e20]: £
+          - generic [ref=e21]: GBP
+          - generic [ref=e22]: expand_more
+        - button "A Admin expand_more" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: A
+          - generic [ref=e26]: Admin
+          - generic [ref=e27]: expand_more
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - img "Pristine tropical white sand beach with turquoise water" [ref=e32]
+      - generic [ref=e33]:
+        - heading "Find Your Perfect Escape" [level=2] [ref=e34]
+        - paragraph [ref=e35]: UK's trusted travel experts with full financial protection.
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: Destination
+            - generic [ref=e40]:
+              - generic [ref=e41]: location_on
+              - textbox "Where are you going?" [ref=e42]: Paris
+          - generic [ref=e43]:
+            - generic [ref=e44]: Check-in
+            - generic [ref=e45]:
+              - generic [ref=e46]: calendar_today
+              - textbox [active] [ref=e47]: 2026-07-02
+          - generic [ref=e48]:
+            - generic [ref=e49]: Check-out
+            - generic [ref=e50]:
+              - generic [ref=e51]: calendar_today
+              - textbox [ref=e52]: 2026-05-12
+          - generic [ref=e53]:
+            - generic [ref=e54]: Guests
+            - generic [ref=e55]:
+              - generic [ref=e56]: person
+              - button "2Ad, 1 Ro" [ref=e57] [cursor=pointer]
+          - generic [ref=e58]:
+            - generic [ref=e59]: Citizenship
+            - generic [ref=e60]:
+              - generic [ref=e61]: flag
+              - combobox [ref=e62] [cursor=pointer]:
+                - option "Select..." [selected]
+                - option "Afghanistan"
+                - option "Albania"
+                - option "Algeria"
+                - option "American Samoa"
+                - option "Andorra"
+                - option "Angola"
+                - option "Antigua and Barbuda"
+                - option "Argentina"
+                - option "Armenia"
+                - option "Aruba"
+                - option "Australia"
+                - option "Austria"
+                - option "Azerbaijan"
+                - option "Bahamas"
+                - option "Bahrain"
+                - option "Bangladesh"
+                - option "Barbados"
+                - option "Belarus"
+                - option "Belgium"
+                - option "Belize"
+                - option "Benin"
+                - option "Bermuda"
+                - option "Bhutan"
+                - option "Bolivia"
+                - option "Bonaire, Sint Eustatius and Saba"
+                - option "Bosnia and Herzegovina"
+                - option "Botswana"
+                - option "Bouvet Island"
+                - option "Brazil"
+                - option "British Indian Ocean Territory"
+                - option "Brunei Darussalam"
+                - option "Bulgaria"
+                - option "Burkina Faso"
+                - option "Burundi"
+                - option "Cabo Verde"
+                - option "Cambodia"
+                - option "Cameroon"
+                - option "Canada"
+                - option "Cayman Islands"
+                - option "Central African Republic"
+                - option "Chad"
+                - option "Chile"
+                - option "China"
+                - option "Christmas Island"
+                - option "Cocos (Keeling) Islands"
+                - option "Colombia"
+                - option "Comoros"
+                - option "Congo"
+                - option "Congo (Democratic Republic)"
+                - option "Cook Islands"
+                - option "Costa Rica"
+                - option "Côte d'Ivoire"
+                - option "Croatia"
+                - option "Cuba"
+                - option "Curaçao"
+                - option "Cyprus"
+                - option "Czechia"
+                - option "Denmark"
+                - option "Djibouti"
+                - option "Dominica"
+                - option "Dominican Republic"
+                - option "Ecuador"
+                - option "Egypt"
+                - option "El Salvador"
+                - option "Equatorial Guinea"
+                - option "Eritrea"
+                - option "Estonia"
+                - option "Eswatini"
+                - option "Ethiopia"
+                - option "Falkland Islands"
+                - option "Faroe Islands"
+                - option "Fiji"
+                - option "Finland"
+                - option "France"
+                - option "French Guiana"
+                - option "French Polynesia"
+                - option "French Southern Territories"
+                - option "Gabon"
+                - option "Gambia"
+                - option "Georgia"
+                - option "Germany"
+                - option "Ghana"
+                - option "Gibraltar"
+                - option "Greece"
+                - option "Greenland"
+                - option "Grenada"
+                - option "Guadeloupe"
+                - option "Guam"
+                - option "Guatemala"
+                - option "Guernsey"
+                - option "Guinea"
+                - option "Guinea-Bissau"
+                - option "Guyana"
+                - option "Haiti"
+                - option "Heard Island and McDonald Islands"
+                - option "Holy See"
+                - option "Honduras"
+                - option "Hong Kong"
+                - option "Hungary"
+                - option "Iceland"
+                - option "India"
+                - option "Indonesia"
+                - option "Iran"
+                - option "Iraq"
+                - option "Ireland"
+                - option "Isle of Man"
+                - option "Israel"
+                - option "Italy"
+                - option "Jamaica"
+                - option "Japan"
+                - option "Jersey"
+                - option "Jordan"
+                - option "Kazakhstan"
+                - option "Kenya"
+                - option "Kiribati"
+                - option "Korea (North)"
+                - option "Korea (South)"
+                - option "Kuwait"
+                - option "Kyrgyzstan"
+                - option "Lao"
+                - option "Latvia"
+                - option "Lebanon"
+                - option "Lesotho"
+                - option "Liberia"
+                - option "Libya"
+                - option "Liechtenstein"
+                - option "Lithuania"
+                - option "Luxembourg"
+                - option "Macao"
+                - option "Madagascar"
+                - option "Malawi"
+                - option "Malaysia"
+                - option "Maldives"
+                - option "Mali"
+                - option "Malta"
+                - option "Marshall Islands"
+                - option "Martinique"
+                - option "Mauritania"
+                - option "Mauritius"
+                - option "Mayotte"
+                - option "Mexico"
+                - option "Micronesia"
+                - option "Moldova"
+                - option "Monaco"
+                - option "Mongolia"
+                - option "Montenegro"
+                - option "Montserrat"
+                - option "Morocco"
+                - option "Mozambique"
+                - option "Myanmar"
+                - option "Namibia"
+                - option "Nauru"
+                - option "Nepal"
+                - option "Netherlands"
+                - option "New Caledonia"
+                - option "New Zealand"
+                - option "Nicaragua"
+                - option "Niger"
+                - option "Nigeria"
+                - option "Niue"
+                - option "Norfolk Island"
+                - option "North Macedonia"
+                - option "Northern Mariana Islands"
+                - option "Norway"
+                - option "Oman"
+                - option "Pakistan"
+                - option "Palau"
+                - option "Palestine"
+                - option "Panama"
+                - option "Papua New Guinea"
+                - option "Paraguay"
+                - option "Peru"
+                - option "Philippines"
+                - option "Pitcairn"
+                - option "Poland"
+                - option "Portugal"
+                - option "Puerto Rico"
+                - option "Qatar"
+                - option "Réunion"
+                - option "Romania"
+                - option "Russian Federation"
+                - option "Rwanda"
+                - option "Saint Barthélemy"
+                - option "Saint Helena"
+                - option "Saint Kitts and Nevis"
+                - option "Saint Lucia"
+                - option "Saint Martin"
+                - option "Saint Pierre and Miquelon"
+                - option "Saint Vincent and the Grenadines"
+                - option "Samoa"
+                - option "San Marino"
+                - option "Sao Tome and Principe"
+                - option "Saudi Arabia"
+                - option "Senegal"
+                - option "Serbia"
+                - option "Seychelles"
+                - option "Sierra Leone"
+                - option "Singapore"
+                - option "Sint Maarten"
+                - option "Slovakia"
+                - option "Slovenia"
+                - option "Solomon Islands"
+                - option "Somalia"
+                - option "South Africa"
+                - option "South Georgia"
+                - option "South Sudan"
+                - option "Spain"
+                - option "Sri Lanka"
+                - option "Sudan"
+                - option "Suriname"
+                - option "Svalbard and Jan Mayen"
+                - option "Sweden"
+                - option "Switzerland"
+                - option "Syria"
+                - option "Taiwan"
+                - option "Tajikistan"
+                - option "Tanzania"
+                - option "Thailand"
+                - option "Timor-Leste"
+                - option "Togo"
+                - option "Tokelau"
+                - option "Tonga"
+                - option "Trinidad and Tobago"
+                - option "Tunisia"
+                - option "Türkiye"
+                - option "Turkmenistan"
+                - option "Turks and Caicos Islands"
+                - option "Tuvalu"
+                - option "Uganda"
+                - option "Ukraine"
+                - option "United Arab Emirates"
+                - option "United Kingdom"
+                - option "United States"
+                - option "United States Minor Outlying Islands"
+                - option "Uruguay"
+                - option "Uzbekistan"
+                - option "Vanuatu"
+                - option "Venezuela"
+                - option "Viet Nam"
+                - option "Virgin Islands (British)"
+                - option "Virgin Islands (U.S.)"
+                - option "Wallis and Futuna"
+                - option "Western Sahara"
+                - option "Yemen"
+                - option "Zambia"
+                - option "Zimbabwe"
+          - button "search" [ref=e63] [cursor=pointer]:
+            - generic [ref=e64]: search
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e69]: verified_user
+        - heading "Fully Protected" [level=3] [ref=e70]
+        - paragraph [ref=e71]: Your money is 100% safe
+      - generic [ref=e72]:
+        - generic [ref=e74]: headset_mic
+        - heading "24/7 Support" [level=3] [ref=e75]
+        - paragraph [ref=e76]: Always here to help you
+      - generic [ref=e77]:
+        - generic [ref=e79]: star
+        - heading "Expert Advice" [level=3] [ref=e80]
+        - paragraph [ref=e81]: Personal travel specialists
+      - generic [ref=e82]:
+        - generic [ref=e84]: payments
+        - heading "Best Price Promise" [level=3] [ref=e85]
+        - paragraph [ref=e86]: Unbeatable value guaranteed
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - heading "Featured Deals" [level=2] [ref=e90]
+          - paragraph [ref=e91]: Hand-picked luxury holidays at exclusive prices.
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - button "chevron_left" [disabled] [ref=e94]:
+              - generic [ref=e95]: chevron_left
+            - button "chevron_right" [ref=e96] [cursor=pointer]:
+              - generic [ref=e97]: chevron_right
+          - link "View all deals arrow_forward" [ref=e98] [cursor=pointer]:
+            - /url: /deals
+            - text: View all deals
+            - generic [ref=e99]: arrow_forward
+      - generic [ref=e100]:
+        - generic [ref=e102] [cursor=pointer]:
+          - generic [ref=e103]:
+            - img "Novotel Venezia Mestre Castellana" [ref=e104]
+            - generic [ref=e105]: Limited Availability
+          - generic [ref=e106]:
+            - heading "Novotel Venezia Mestre Castellana" [level=3] [ref=e107]
+            - generic [ref=e108]:
+              - generic [ref=e109]:
+                - generic [ref=e110]: star
+                - generic [ref=e111]: star
+                - generic [ref=e112]: star
+                - generic [ref=e113]: star
+              - generic [ref=e114]: "4.0"
+            - generic [ref=e115]:
+              - generic [ref=e116]: location_on
+              - generic [ref=e117]: Venice, Italy
+            - generic [ref=e118]:
+              - generic [ref=e119]: flight_takeoff
+              - generic [ref=e120]:
+                - generic [ref=e121]: Fri, 17 Apr 2026
+                - generic [ref=e122]: from Luton
+            - generic [ref=e123]:
+              - generic [ref=e124]:
+                - generic [ref=e125]: dark_mode
+                - text: 4 Nights
+              - generic [ref=e126]:
+                - generic [ref=e127]: restaurant
+                - text: Bed & Breakfast
+              - generic [ref=e128]:
+                - generic [ref=e129]: flight
+                - text: Flights
+              - generic [ref=e130]:
+                - generic [ref=e131]: luggage
+                - text: Luggage
+              - generic [ref=e132]:
+                - generic [ref=e133]: airport_shuttle
+                - text: Transfers
+            - generic [ref=e134]:
+              - generic [ref=e135]:
+                - paragraph [ref=e136]: from
+                - paragraph [ref=e137]: £495pp
+              - generic [ref=e138]:
+                - text: View deal
+                - generic [ref=e139]: arrow_forward
+        - generic [ref=e141] [cursor=pointer]:
+          - generic [ref=e144]: image
+          - generic [ref=e145]:
+            - heading "Maldives Resort" [level=3] [ref=e146]
+            - generic [ref=e147]:
+              - generic [ref=e148]: location_on
+              - generic [ref=e149]: Maldives
+            - paragraph [ref=e150]: Very nice location next to the sea
+            - generic [ref=e152]:
+              - text: View deal
+              - generic [ref=e153]: arrow_forward
+        - generic [ref=e155] [cursor=pointer]:
+          - generic [ref=e158]: image
+          - generic [ref=e159]:
+            - heading "Maldives Resort" [level=3] [ref=e160]
+            - generic [ref=e161]:
+              - generic [ref=e162]: location_on
+              - generic [ref=e163]: Maldives
+            - paragraph [ref=e164]: Very nice location next to the sea
+            - generic [ref=e166]:
+              - text: View deal
+              - generic [ref=e167]: arrow_forward
+        - generic [ref=e169] [cursor=pointer]:
+          - generic [ref=e170]:
+            - img "Sofia Hotel" [ref=e171]
+            - generic [ref=e172]: save 400pp
+          - generic [ref=e173]:
+            - heading "Sofia Hotel" [level=3] [ref=e174]
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e177]: star
+                - generic [ref=e178]: star
+                - generic [ref=e179]: star
+              - generic [ref=e180]: "3.0"
+            - generic [ref=e181]:
+              - generic [ref=e182]: location_on
+              - generic [ref=e183]: Crete, Greecehjkb
+            - generic [ref=e184]:
+              - generic [ref=e185]: flight_takeoff
+              - generic [ref=e187]: from Manchester
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - generic [ref=e190]: dark_mode
+                - text: 4 Nights
+              - generic [ref=e191]:
+                - generic [ref=e192]: restaurant
+                - text: All Inclusive
+              - generic [ref=e193]:
+                - generic [ref=e194]: flight
+                - text: Flights
+              - generic [ref=e195]:
+                - generic [ref=e196]: luggage
+                - text: Luggage
+            - generic [ref=e197]:
+              - generic [ref=e198]:
+                - paragraph [ref=e199]: from
+                - paragraph [ref=e200]: £443pp
+              - generic [ref=e201]:
+                - text: View deal
+                - generic [ref=e202]: arrow_forward
+        - generic [ref=e204] [cursor=pointer]:
+          - generic [ref=e205]:
+            - img "Bellagio Beach Resort & Spa" [ref=e206]
+            - generic [ref=e207]: Limited Offer
+          - generic [ref=e208]:
+            - heading "Bellagio Beach Resort & Spa" [level=3] [ref=e209]
+            - generic [ref=e210]:
+              - generic [ref=e211]:
+                - generic [ref=e212]: star
+                - generic [ref=e213]: star
+                - generic [ref=e214]: star
+                - generic [ref=e215]: star
+                - generic [ref=e216]: star
+              - generic [ref=e217]: "5.0"
+            - generic [ref=e218]:
+              - generic [ref=e219]: location_on
+              - generic [ref=e220]: Hurghada, Egypt
+            - paragraph [ref=e221]: "- Access to private beach -5 Outdoor pools with 2 heated pools - All-Inclusive - 5 Restaurants and 3 bars"
+            - generic [ref=e222]:
+              - generic [ref=e223]: flight_takeoff
+              - generic [ref=e224]:
+                - generic [ref=e225]: Sun, 19 Jul 2026
+                - generic [ref=e226]: from Stansted
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e229]: dark_mode
+                - text: 7 Nights
+              - generic [ref=e230]:
+                - generic [ref=e231]: restaurant
+                - text: All Inclusive
+              - generic [ref=e232]:
+                - generic [ref=e233]: flight
+                - text: Flights
+              - generic [ref=e234]:
+                - generic [ref=e235]: luggage
+                - text: Luggage
+              - generic [ref=e236]:
+                - generic [ref=e237]: airport_shuttle
+                - text: Transfers
+            - generic [ref=e238]:
+              - generic [ref=e239]:
+                - paragraph [ref=e240]: from
+                - paragraph [ref=e241]: £1,090pp
+              - generic [ref=e242]:
+                - text: View deal
+                - generic [ref=e243]: arrow_forward
+        - generic [ref=e245] [cursor=pointer]:
+          - generic [ref=e246]:
+            - generic [ref=e248]: image
+            - generic [ref=e249]: Limited availability
+          - generic [ref=e250]:
+            - heading "Maldives Resort" [level=3] [ref=e251]
+            - generic [ref=e252]:
+              - generic [ref=e253]:
+                - generic [ref=e254]: star
+                - generic [ref=e255]: star
+                - generic [ref=e256]: star
+                - generic [ref=e257]: star
+              - generic [ref=e258]: "4.0"
+            - generic [ref=e259]:
+              - generic [ref=e260]: location_on
+              - generic [ref=e261]: Maldives
+            - paragraph [ref=e262]: Very nice location next to the sea
+            - generic [ref=e263]:
+              - generic [ref=e264]: flight_takeoff
+              - generic [ref=e265]:
+                - generic [ref=e266]: Sat, 26 Dec 2026
+                - generic [ref=e267]: from Luton
+            - generic [ref=e268]:
+              - generic [ref=e269]:
+                - generic [ref=e270]: dark_mode
+                - text: 4 Nights
+              - generic [ref=e271]:
+                - generic [ref=e272]: restaurant
+                - text: Half Board
+            - generic [ref=e273]:
+              - generic [ref=e274]:
+                - paragraph [ref=e275]: from
+                - paragraph [ref=e276]: £906pp
+              - generic [ref=e277]:
+                - text: View deal
+                - generic [ref=e278]: arrow_forward
+        - generic [ref=e280] [cursor=pointer]:
+          - generic [ref=e281]:
+            - generic [ref=e283]: image
+            - generic [ref=e284]: Limited availability
+          - generic [ref=e285]:
+            - heading "almara Maldives Resort" [level=3] [ref=e286]
+            - generic [ref=e287]:
+              - generic [ref=e288]:
+                - generic [ref=e289]: star
+                - generic [ref=e290]: star
+                - generic [ref=e291]: star
+                - generic [ref=e292]: star
+              - generic [ref=e293]: "4.0"
+            - generic [ref=e294]:
+              - generic [ref=e295]: location_on
+              - generic [ref=e296]: Maldives
+            - paragraph [ref=e297]: Very nice location next to the sea
+            - generic [ref=e298]:
+              - generic [ref=e299]: flight_takeoff
+              - generic [ref=e300]:
+                - generic [ref=e301]: Sat, 26 Dec 2026
+                - generic [ref=e302]: from Luton
+            - generic [ref=e303]:
+              - generic [ref=e304]:
+                - generic [ref=e305]: dark_mode
+                - text: 4 Nights
+              - generic [ref=e306]:
+                - generic [ref=e307]: restaurant
+                - text: Half Board
+            - generic [ref=e308]:
+              - generic [ref=e309]:
+                - paragraph [ref=e310]: from
+                - paragraph [ref=e311]: £906pp
+              - generic [ref=e312]:
+                - text: View deal
+                - generic [ref=e313]: arrow_forward
+        - generic [ref=e315] [cursor=pointer]:
+          - generic [ref=e316]:
+            - generic [ref=e318]: image
+            - generic [ref=e319]: Limited availability
+          - generic [ref=e320]:
+            - heading "almara Maldives Resort" [level=3] [ref=e321]
+            - generic [ref=e322]:
+              - generic [ref=e323]:
+                - generic [ref=e324]: star
+                - generic [ref=e325]: star
+                - generic [ref=e326]: star
+                - generic [ref=e327]: star
+              - generic [ref=e328]: "4.0"
+            - generic [ref=e329]:
+              - generic [ref=e330]: location_on
+              - generic [ref=e331]: Maldives
+            - paragraph [ref=e332]: Very nice location next to the sea
+            - generic [ref=e333]:
+              - generic [ref=e334]: flight_takeoff
+              - generic [ref=e335]:
+                - generic [ref=e336]: Sat, 26 Dec 2026
+                - generic [ref=e337]: from Luton
+            - generic [ref=e338]:
+              - generic [ref=e339]:
+                - generic [ref=e340]: dark_mode
+                - text: 4 Nights
+              - generic [ref=e341]:
+                - generic [ref=e342]: restaurant
+                - text: Half Board
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - paragraph [ref=e345]: from
+                - paragraph [ref=e346]: £906pp
+              - generic [ref=e347]:
+                - text: View deal
+                - generic [ref=e348]: arrow_forward
+        - generic [ref=e350] [cursor=pointer]:
+          - generic [ref=e351]:
+            - generic [ref=e353]: image
+            - generic [ref=e354]: Limited availability
+          - generic [ref=e355]:
+            - heading "almara Maldives Resort" [level=3] [ref=e356]
+            - generic [ref=e357]:
+              - generic [ref=e358]:
+                - generic [ref=e359]: star
+                - generic [ref=e360]: star
+                - generic [ref=e361]: star
+                - generic [ref=e362]: star
+              - generic [ref=e363]: "4.0"
+            - generic [ref=e364]:
+              - generic [ref=e365]: location_on
+              - generic [ref=e366]: Maldives
+            - paragraph [ref=e367]: Very nice location next to the sea
+            - generic [ref=e368]:
+              - generic [ref=e369]: flight_takeoff
+              - generic [ref=e370]:
+                - generic [ref=e371]: Sat, 26 Dec 2026
+                - generic [ref=e372]: from Luton
+            - generic [ref=e373]:
+              - generic [ref=e374]:
+                - generic [ref=e375]: dark_mode
+                - text: 4 Nights
+              - generic [ref=e376]:
+                - generic [ref=e377]: restaurant
+                - text: Half Board
+            - generic [ref=e378]:
+              - generic [ref=e379]:
+                - paragraph [ref=e380]: from
+                - paragraph [ref=e381]: £906pp
+              - generic [ref=e382]:
+                - text: View deal
+                - generic [ref=e383]: arrow_forward
+        - generic [ref=e385] [cursor=pointer]:
+          - generic [ref=e386]:
+            - generic [ref=e388]: image
+            - generic [ref=e389]: Limited availability
+          - generic [ref=e390]:
+            - heading "almara Maldives Resort" [level=3] [ref=e391]
+            - generic [ref=e392]:
+              - generic [ref=e393]:
+                - generic [ref=e394]: star
+                - generic [ref=e395]: star
+                - generic [ref=e396]: star
+                - generic [ref=e397]: star
+              - generic [ref=e398]: "4.0"
+            - generic [ref=e399]:
+              - generic [ref=e400]: location_on
+              - generic [ref=e401]: Maldives
+            - paragraph [ref=e402]: Very nice location next to the sea
+            - generic [ref=e403]:
+              - generic [ref=e404]: flight_takeoff
+              - generic [ref=e405]:
+                - generic [ref=e406]: Sat, 26 Dec 2026
+                - generic [ref=e407]: from Luton
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - generic [ref=e410]: dark_mode
+                - text: 4 Nights
+              - generic [ref=e411]:
+                - generic [ref=e412]: restaurant
+                - text: Half Board
+            - generic [ref=e413]:
+              - generic [ref=e414]:
+                - paragraph [ref=e415]: from
+                - paragraph [ref=e416]: £906pp
+              - generic [ref=e417]:
+                - text: View deal
+                - generic [ref=e418]: arrow_forward
+    - generic [ref=e420]:
+      - heading "Trending Destinations" [level=2] [ref=e421]
+      - generic [ref=e422]:
+        - generic [ref=e423]:
+          - img "Traditional Japanese temple with blossoms" [ref=e424]
+          - generic [ref=e426]:
+            - heading "Japan" [level=4] [ref=e427]
+            - paragraph [ref=e428]: Authentic Culture
+        - generic [ref=e429]:
+          - img "Sunset over African Savannah with wildlife" [ref=e430]
+          - generic [ref=e432]:
+            - heading "Kenya" [level=4] [ref=e433]
+            - paragraph [ref=e434]: Safari Adventures
+        - generic [ref=e435]:
+          - img "Iceland northern lights over waterfall" [ref=e436]
+          - generic [ref=e438]:
+            - heading "Iceland" [level=4] [ref=e439]
+            - paragraph [ref=e440]: Natural Wonders
+        - generic [ref=e441]:
+          - img "Sydney Opera House at dusk" [ref=e442]
+          - generic [ref=e444]:
+            - heading "Australia" [level=4] [ref=e445]
+            - paragraph [ref=e446]: Coastal Living
+    - generic [ref=e447]:
+      - generic [ref=e448]:
+        - heading "What Our Customers Say" [level=2] [ref=e449]
+        - link "Google star star star star star 5 (6 reviews)" [ref=e450] [cursor=pointer]:
+          - /url: https://www.google.com/search?kgmid=/g/11ymly9hnl#lrd=0x0:0xc3e974eebe978de6,1,,,
+          - img "Google" [ref=e451]
+          - generic [ref=e452]:
+            - generic [ref=e453]: star
+            - generic [ref=e454]: star
+            - generic [ref=e455]: star
+            - generic [ref=e456]: star
+            - generic [ref=e457]: star
+          - generic [ref=e458]: "5"
+          - generic [ref=e459]: (6 reviews)
+      - generic [ref=e460]:
+        - generic [ref=e461]:
+          - generic [ref=e462]:
+            - generic [ref=e463]:
+              - generic [ref=e464]: star
+              - generic [ref=e465]: star
+              - generic [ref=e466]: star
+              - generic [ref=e467]: star
+              - generic [ref=e468]: star
+            - img "Google" [ref=e469]
+          - paragraph [ref=e470]: Sandhya has helped us in planning our holiday to Paris. The hotel was in a perfect location and had a very good stay. We took a Eurostar from London to Paris and I would definitely recommend specially if you have young kids. Thanks again for Sandhya for organising a wonderful trip. Highly recommend Sandlight Travels.
+          - generic [ref=e471]:
+            - generic [ref=e472]: AA
+            - generic [ref=e473]:
+              - paragraph [ref=e474]: Ashwin Arroju
+              - paragraph [ref=e475]: a week ago
+        - generic [ref=e476]:
+          - generic [ref=e477]:
+            - generic [ref=e478]:
+              - generic [ref=e479]: star
+              - generic [ref=e480]: star
+              - generic [ref=e481]: star
+              - generic [ref=e482]: star
+              - generic [ref=e483]: star
+            - img "Google" [ref=e484]
+          - paragraph [ref=e485]: Excellent communications throughout and a extremely competitive price for a 5 star holiday - thanks and we will definitely travel through SL again.
+          - generic [ref=e486]:
+            - generic [ref=e487]: AP
+            - generic [ref=e488]:
+              - paragraph [ref=e489]: Amrish Patel
+              - paragraph [ref=e490]: a month ago
+        - generic [ref=e491]:
+          - generic [ref=e492]:
+            - generic [ref=e493]:
+              - generic [ref=e494]: star
+              - generic [ref=e495]: star
+              - generic [ref=e496]: star
+              - generic [ref=e497]: star
+              - generic [ref=e498]: star
+            - img "Google" [ref=e499]
+          - paragraph [ref=e500]: Excellent service from the travel agency that helped us plan our trip to Antalya, Turkey. Their response was really amazing, very quick, and supportive throughout. Highly recommended if you need any travel assistance!
+          - generic [ref=e501]:
+            - generic [ref=e502]: HG
+            - generic [ref=e503]:
+              - paragraph [ref=e504]: Harish Gunda
+              - paragraph [ref=e505]: 2 months ago
+      - link "See all Google reviews open_in_new" [ref=e507] [cursor=pointer]:
+        - /url: https://www.google.com/search?kgmid=/g/11ymly9hnl#lrd=0x0:0xc3e974eebe978de6,1,,,
+        - text: See all Google reviews
+        - generic [ref=e508]: open_in_new
+    - generic [ref=e510]:
+      - generic [ref=e512]: mail
+      - generic [ref=e513]:
+        - heading "Stay in the Loop" [level=2] [ref=e514]
+        - paragraph [ref=e515]: Join 50,000+ travel lovers and get exclusive secret deals delivered to your inbox every week.
+        - generic [ref=e516]:
+          - generic [ref=e517]:
+            - textbox "Your email address" [ref=e518]
+            - button "Subscribe" [ref=e519] [cursor=pointer]
+          - paragraph [ref=e520]: We respect your privacy. Unsubscribe at any time.
+  - contentinfo [ref=e521]:
+    - generic [ref=e522]:
+      - generic [ref=e523]:
+        - generic [ref=e524]:
+          - generic [ref=e525]:
+            - img "Sandlight Travels" [ref=e526]
+            - heading "Sandlight Travels" [level=2] [ref=e527]
+          - paragraph [ref=e528]: Leading UK independent travel agency. We combine expert knowledge with unbeatable service to create your perfect getaway.
+          - list [ref=e529]:
+            - listitem [ref=e530]:
+              - generic [ref=e531]: call
+              - link "0800 031 5285" [ref=e532] [cursor=pointer]:
+                - /url: tel:08000315285
+            - listitem [ref=e533]:
+              - generic [ref=e534]: mail
+              - link "info@sandlighttravels.co.uk" [ref=e535] [cursor=pointer]:
+                - /url: mailto:info@sandlighttravels.co.uk
+            - listitem [ref=e536]:
+              - img [ref=e537]
+              - link "WhatsApp Us" [ref=e539] [cursor=pointer]:
+                - /url: https://wa.me/447425910458?text=Good%20day%2C%20I%20am%20writing%20to%20enquire%20about%20a%20holiday%20package.
+          - generic [ref=e540]:
+            - link [ref=e541] [cursor=pointer]:
+              - /url: https://www.facebook.com/sandlighttravels
+              - img [ref=e542]
+            - link [ref=e544] [cursor=pointer]:
+              - /url: https://www.instagram.com/sandlighttravels
+              - img [ref=e545]
+            - link [ref=e547] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/sandlighttravels
+              - img [ref=e548]
+        - generic [ref=e550]:
+          - heading "Quick Links" [level=4] [ref=e551]
+          - list [ref=e552]:
+            - listitem [ref=e553]:
+              - link "About Us" [ref=e554] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e555]:
+              - link "Contact Us" [ref=e556] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e557]:
+              - link "Transfers" [ref=e558] [cursor=pointer]:
+                - /url: /experiences/transfers
+            - listitem [ref=e559]:
+              - link "Airport Lounges" [ref=e560] [cursor=pointer]:
+                - /url: /experiences/lounges
+            - listitem [ref=e561]:
+              - link "Tours & Activities" [ref=e562] [cursor=pointer]:
+                - /url: /experiences/get-your-guide
+            - listitem [ref=e563]:
+              - link "Travel Insurance" [ref=e564] [cursor=pointer]:
+                - /url: /experiences/travel-insurance
+        - generic [ref=e565]:
+          - heading "Support" [level=4] [ref=e566]
+          - list [ref=e567]:
+            - listitem [ref=e568]:
+              - link "Manage Booking" [ref=e569] [cursor=pointer]:
+                - /url: /account/bookings
+            - listitem [ref=e570]:
+              - link "Financial Protection" [ref=e571] [cursor=pointer]:
+                - /url: /protection
+            - listitem [ref=e572]:
+              - link "Terms & Conditions" [ref=e573] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e574]:
+              - link "Privacy Policy" [ref=e575] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e576]:
+              - link "Cookie Policy" [ref=e577] [cursor=pointer]:
+                - /url: /cookies
+        - generic [ref=e578]:
+          - heading "Our Partners" [level=4] [ref=e579]
+          - generic [ref=e580]:
+            - generic [ref=e581]: easyJet
+            - generic [ref=e582]: TUI
+            - generic [ref=e583]: Jet2
+            - generic [ref=e584]: P&O Cruises
+            - generic [ref=e585]: MSC Cruises
+            - generic [ref=e586]: RCI
+          - paragraph [ref=e587]: Partnered with the UK's leading travel operators to bring you the best deals.
+      - generic [ref=e588]:
+        - paragraph [ref=e589]: © 2026 Sandlight Travels. All rights reserved.
+        - generic [ref=e590]:
+          - img "Visa logo" [ref=e591]
+          - img "Mastercard logo" [ref=e592]
+  - link [ref=e593] [cursor=pointer]:
+    - /url: https://wa.me/447425910458?text=Good%20day%2C%20I%20am%20writing%20to%20enquire%20about%20a%20holiday%20package.
+    - img [ref=e594]
+  - alert [ref=e596]
+```
+
+# Test source
+
+```ts
+  1   | import {expect} from '@playwright/test'
+  2   | import {getHotelDetails} from "../utils/excelHandling"
+  3   | import { start } from 'node:repl'
+  4   | 
+  5   | export class Home{
+  6   | 
+  7   |     constructor(page)
+  8   |     {
+  9   |         this.page=page
+  10  |         this.loginBtn=page.locator("//a[@href='/login']")
+  11  |         this.expandBtn=page.locator("//button[@id='btn-user-menu']/span[contains(text(),'expand_more')]")
+  12  |         this.adminPanelBtn=page.locator("//a[contains(text(),'Admin Panel')]")
+  13  |         this.statusMessage=page.locator("//div[@role='status']")
+  14  |         this.userNameBtn=page.locator("#btn-user-menu")
+  15  |         this.username=page.locator("//button[@id='btn-user-menu']//span[1]")
+  16  |         this.destination=page.locator("#destination")
+  17  |         this.selectDestination=page.locator("//input[@id='destination']/following-sibling::div//p[1]")
+  18  |         this.checkin=page.locator("//input[@id='checkin']")
+  19  |         this.checkout=page.locator("//input[@id='checkout']")
+  20  |         this.guests=page.locator("#btn-guests-toggle")
+  21  |         this.rooms_count=page.locator("#rooms-count")
+  22  |         this.adults_count=page.locator("#room-0-adults-count")
+  23  |         this.children_count=page.locator("#room-0-children-count")
+  24  |         this.adult_plus_btn=page.locator("#btn-room-0-adults-plus")
+  25  |         this.adult_minus_btn=page.locator("#btn-room-0-adults-minus")
+  26  |         this.child_plus_btn=page.locator("#btn-room-0-children-plus")
+  27  |         this.applyBtn=page.locator("#btn-guests-apply")
+  28  |         this.citizen_select=page.locator("#select-citizenship")
+  29  |         this.searchBtn=page.locator("#btn-search")
+  30  | 
+  31  | 
+  32  | 
+  33  |     }
+  34  |     async clickOnLogin(){
+  35  |         await this.loginBtn.click()
+  36  |     }
+  37  |     async goToAdminPanel(){
+  38  |         await this.expandBtn.click()
+  39  |         await this.adminPanelBtn.click()
+  40  | 
+  41  |     }
+  42  |     async verifyUserBtn(){
+  43  |         await expect(this.userNameBtn).toBeVisible()
+  44  |     }
+  45  |     async waitForStatusToDisappear()
+  46  |     {
+  47  |         await expect(this.statusMessage).toBeHidden();
+  48  |     }
+  49  |     async verifyAdminPanel(){
+  50  |         console.log(await this.username.textContent())
+  51  |         await expect(this.username).toContainText("Admin")
+  52  |     }
+  53  |     async enterHotelDetails(hotelData){
+  54  | 
+  55  |         //this.getExcelData(hotelData)
+  56  |         // await this.destination.fill("paris")
+  57  |         // await this.page.waitForTimeout(4000)
+  58  |         // await this.selectDestination.first().click();
+  59  |         // await this.checkin.click()
+  60  |         
+  61  |         //get the search details from excelfile
+  62  |         //enter destination
+  63  |         console.log("destination:", hotelData.Destination)
+  64  |         await this.destination.fill(hotelData.Destination)
+  65  |         await this.page.waitForTimeout(4000)
+  66  |         await this.selectDestination.first().click();
+  67  |         //enter check in date
+  68  |         console.log("checkin:", hotelData.Checkin)
+  69  |         await this.checkin.click()
+  70  |         await this.checkin.fill(hotelData.Checkin)
+  71  | 
+  72  |         const dateArray=hotelData.Checkin.split('-');
+  73  |         const day=dateArray[2]
+  74  |         const month=dateArray[1]
+  75  |         const year=dateArray[0]
+  76  |         console.log("day:", day)
+  77  |         console.log("month:", month)
+  78  |         console.log("year:", year)
+  79  |       //  await this.page.pause();
+  80  |         //thraverse through shadow root to select the date from calendar
+  81  |         await this.checkin.scrollIntoViewIfNeeded()
+  82  |         const startdate=year+'/'+month+'/'+day;
+  83  |        // await this.checkin.click()
+  84  |       //  await this.checkin.fill(startdate);
+  85  |         console.log(startdate);
+  86  |         //set checkout with number of nights from start date
+  87  |         const endday=parseInt(day)+parseInt(hotelData.numberofnights);
+  88  |         const endDate=`${year}-${month}-${endday}`
+  89  | 
+  90  |         //const endDate=year+'-'+month+'-'+endday;
+  91  |         console.log("end date:",endDate)
+  92  |         console.log("Number of nights:", hotelData.numberofnights)
+  93  |         console.log("Adults:", hotelData.Adults)
+  94  | 
+> 95  |         await this.page.guests.click()
+      |                                ^ TypeError: Cannot read properties of undefined (reading 'click')
+  96  |         const adultsDisplayed=await this.adults_count.textContent()
+  97  |         if(adultsDisplayed==hotelData.Adults){
+  98  |             console.log("adults correct and skip to children")
+  99  |         }
+  100 |         else if(adultsDisplayed<hotelData.Adults)
+  101 |         {
+  102 |             while(await this.adults_count.textContent()<hotelData.Adults)
+  103 |             {
+  104 |                 await this.adult_plus_btn.click()
+  105 |             }
+  106 |         }
+  107 |         else if(adultsDisplayed>hotelData.Adults)
+  108 |         {
+  109 |             while(await this.adults_count.textContent()>hotelData.Adults)
+  110 |             {
+  111 |                 await this.adult_minus_btn.click()
+  112 |             }
+  113 |         }
+  114 | 
+  115 |         //get Children
+  116 |         console.log("Children:", hotelData.Children)
+  117 |         const childData=hotelData.Children.split('-')
+  118 |         //number of childeren
+  119 |         const children=childData[0];
+  120 |         //children ages
+  121 |         const childAges=childData[1].split(',')
+  122 |         console.log("Children:", children)
+  123 |         for(let i=0;i<childAges.length;i++)
+  124 |         {
+  125 |             console.log("child",childAges[i])
+  126 |         }
+  127 |         // for(let i of childAges){
+  128 |         //     console.log("child",i)
+  129 |         // }
+  130 |         console.log("Citizenship:", hotelData.Citizenship)
+  131 | 
+  132 | 
+  133 |     }
+  134 |     async getExcelData(hotelData){
+  135 |         console.log("destination:", hotelData.Destination)
+  136 |         console.log("checkin:", hotelData.Checkin)
+  137 |         const dateArray=hotelData.Checkin.split('/');
+  138 |         const day=dateArray[0]
+  139 |         const month=dateArray[1]
+  140 |         const year=dateArray[2]
+  141 |         console.log("day:", day)
+  142 |         console.log("month:", month)
+  143 |         console.log("year:", year)
+  144 |         console.log("Number of nights:", hotelData.numberofnights)
+  145 |         console.log("Adults:", hotelData.Adults)
+  146 |         //get Children
+  147 |         console.log("Children:", hotelData.Children)
+  148 |         const childData=hotelData.Children.split('-')
+  149 |         //number of childeren
+  150 |         const children=childData[0];
+  151 |         //children ages
+  152 |         const childAges=childData[1].split(',')
+  153 |         console.log("Children:", children)
+  154 |         for(let i=0;i<childAges.length;i++)
+  155 |         {
+  156 |             console.log("child",childAges[i])
+  157 |         }
+  158 |         // for(let i of childAges){
+  159 |         //     console.log("child",i)
+  160 |         // }
+  161 |         console.log("Citizenship:", hotelData.Citizenship)
+  162 | 
+  163 | 
+  164 |     }
+  165 | 
+  166 | }
+```

@@ -1,0 +1,1 @@
+[{"uid":"4fc051216bd5f005","name":"login authenticator","time":{"start":1778261153110,"stop":1778261165388,"duration":12278},"status":"passed","severity":"normal"},{"uid":"2abcdb6c7bf8b2d3","name":"Featured Deals","time":{"start":1778261168076,"stop":1778261198245,"duration":30169},"status":"broken","severity":"normal"}]

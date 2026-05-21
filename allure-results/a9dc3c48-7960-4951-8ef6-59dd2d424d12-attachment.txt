@@ -1,0 +1,5 @@
+destination: Paris
+checkin: 46205
+Number of nights: 5
+Adults: 2
+Children: 2-12,9

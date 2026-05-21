@@ -1,0 +1,219 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: featureDeals.spec.js >> Featured Deals
+- Location: tests/featureDeals.spec.js:8:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - link "Sandlight Travels Sandlight Travels Admin" [ref=e5] [cursor=pointer]:
+        - /url: /admin/bookings
+        - img "Sandlight Travels" [ref=e6]
+        - heading "Sandlight Travels Admin" [level=2] [ref=e7]
+      - generic [ref=e8]:
+        - link "open_in_new" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e11]: open_in_new
+        - generic [ref=e12]: A
+    - main [ref=e13]:
+      - complementary [ref=e14]:
+        - generic [ref=e15]:
+          - paragraph [ref=e17]: Main Menu
+          - navigation [ref=e18]:
+            - link "dashboard Overview" [ref=e19] [cursor=pointer]:
+              - /url: /admin/bookings
+              - generic [ref=e20]: dashboard
+              - generic [ref=e21]: Overview
+            - link "user_attributes User Management" [ref=e22] [cursor=pointer]:
+              - /url: /admin/users
+              - generic [ref=e23]: user_attributes
+              - generic [ref=e24]: User Management
+            - link "task_alt Tasks" [ref=e25] [cursor=pointer]:
+              - /url: /admin/tasks
+              - generic [ref=e26]: task_alt
+              - generic [ref=e27]: Tasks
+            - link "local_offer Featured Deals" [active] [ref=e28] [cursor=pointer]:
+              - /url: /admin/featured-deals
+              - generic [ref=e29]: local_offer
+              - generic [ref=e30]: Featured Deals
+            - link "sync Data Sync" [ref=e31] [cursor=pointer]:
+              - /url: /admin/sync
+              - generic [ref=e32]: sync
+              - generic [ref=e33]: Data Sync
+            - link "receipt_long Activity Logs" [ref=e34] [cursor=pointer]:
+              - /url: /admin/audit-logs
+              - generic [ref=e35]: receipt_long
+              - generic [ref=e36]: Activity Logs
+            - link "currency_exchange Currencies" [ref=e37] [cursor=pointer]:
+              - /url: /admin/currencies
+              - generic [ref=e38]: currency_exchange
+              - generic [ref=e39]: Currencies
+            - link "settings Site Settings" [ref=e40] [cursor=pointer]:
+              - /url: /admin/settings
+              - generic [ref=e41]: settings
+              - generic [ref=e42]: Site Settings
+          - generic [ref=e43]:
+            - paragraph [ref=e44]: System
+            - generic [ref=e45]:
+              - generic [ref=e47]: Sync Status
+              - paragraph [ref=e49]: All systems operational.
+              - link "Sync Now" [ref=e50] [cursor=pointer]:
+                - /url: /admin/sync
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - generic [ref=e55]:
+            - heading "Featured Deals" [level=1] [ref=e56]
+            - paragraph [ref=e57]: Manage up to 10 featured deals shown on the homepage.
+          - button "add Add Deal" [disabled] [ref=e58]:
+            - generic [ref=e59]: add
+            - text: Add Deal
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - img "Novotel Venezia Mestre Castellana" [ref=e63]
+              - generic [ref=e64]: Limited Availability
+            - generic [ref=e65]:
+              - heading "Novotel Venezia Mestre Castellana" [level=3] [ref=e66]
+              - paragraph [ref=e67]: 4 Nights • From 17 Apr 2026 • Bed & Breakfast • Flights Incl. • Luggage Incl. • Transfers Incl. • From Luton
+              - generic [ref=e68]:
+                - generic [ref=e69]: from £495
+                - generic [ref=e70]:
+                  - button "edit" [ref=e71] [cursor=pointer]:
+                    - generic [ref=e72]: edit
+                  - button "delete" [ref=e73] [cursor=pointer]:
+                    - generic [ref=e74]: delete
+          - generic [ref=e75]:
+            - generic [ref=e78]: image
+            - generic [ref=e79]:
+              - heading "Maldives Resort" [level=3] [ref=e80]
+              - paragraph [ref=e81]: No details set
+              - generic [ref=e83]:
+                - button "edit" [ref=e84] [cursor=pointer]:
+                  - generic [ref=e85]: edit
+                - button "delete" [ref=e86] [cursor=pointer]:
+                  - generic [ref=e87]: delete
+          - generic [ref=e88]:
+            - generic [ref=e91]: image
+            - generic [ref=e92]:
+              - heading "Maldives Resort" [level=3] [ref=e93]
+              - paragraph [ref=e94]: No details set
+              - generic [ref=e96]:
+                - button "edit" [ref=e97] [cursor=pointer]:
+                  - generic [ref=e98]: edit
+                - button "delete" [ref=e99] [cursor=pointer]:
+                  - generic [ref=e100]: delete
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - img "Sofia Hotel" [ref=e103]
+              - generic [ref=e104]: save 400pp
+            - generic [ref=e105]:
+              - heading "Sofia Hotel" [level=3] [ref=e106]
+              - paragraph [ref=e107]: 4 Nights • All Inclusive • Flights Incl. • Luggage Incl. • From Manchester
+              - generic [ref=e108]:
+                - generic [ref=e109]: from £443
+                - generic [ref=e110]:
+                  - button "edit" [ref=e111] [cursor=pointer]:
+                    - generic [ref=e112]: edit
+                  - button "delete" [ref=e113] [cursor=pointer]:
+                    - generic [ref=e114]: delete
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - img "Bellagio Beach Resort & Spa" [ref=e117]
+              - generic [ref=e118]: Limited Offer
+            - generic [ref=e119]:
+              - heading "Bellagio Beach Resort & Spa" [level=3] [ref=e120]
+              - paragraph [ref=e121]: 7 Nights • From 19 Jul 2026 • All Inclusive • Flights Incl. • Luggage Incl. • Transfers Incl. • From Stansted
+              - generic [ref=e122]:
+                - generic [ref=e123]: from £1,090
+                - generic [ref=e124]:
+                  - button "edit" [ref=e125] [cursor=pointer]:
+                    - generic [ref=e126]: edit
+                  - button "delete" [ref=e127] [cursor=pointer]:
+                    - generic [ref=e128]: delete
+          - generic [ref=e129]:
+            - generic [ref=e130]:
+              - generic [ref=e132]: image
+              - generic [ref=e133]: Limited availability
+            - generic [ref=e134]:
+              - heading "Maldives Resort" [level=3] [ref=e135]
+              - paragraph [ref=e136]: 4 Nights • From 26 Dec 2026 • Half Board • From Luton
+              - generic [ref=e137]:
+                - generic [ref=e138]: from £906
+                - generic [ref=e139]:
+                  - button "edit" [ref=e140] [cursor=pointer]:
+                    - generic [ref=e141]: edit
+                  - button "delete" [ref=e142] [cursor=pointer]:
+                    - generic [ref=e143]: delete
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e147]: image
+              - generic [ref=e148]: Limited availability
+            - generic [ref=e149]:
+              - heading "almara Maldives Resort" [level=3] [ref=e150]
+              - paragraph [ref=e151]: 4 Nights • From 26 Dec 2026 • Half Board • From Luton
+              - generic [ref=e152]:
+                - generic [ref=e153]: from £906
+                - generic [ref=e154]:
+                  - button "edit" [ref=e155] [cursor=pointer]:
+                    - generic [ref=e156]: edit
+                  - button "delete" [ref=e157] [cursor=pointer]:
+                    - generic [ref=e158]: delete
+          - generic [ref=e159]:
+            - generic [ref=e160]:
+              - generic [ref=e162]: image
+              - generic [ref=e163]: Limited availability
+            - generic [ref=e164]:
+              - heading "almara Maldives Resort" [level=3] [ref=e165]
+              - paragraph [ref=e166]: 4 Nights • From 26 Dec 2026 • Half Board • From Luton
+              - generic [ref=e167]:
+                - generic [ref=e168]: from £906
+                - generic [ref=e169]:
+                  - button "edit" [ref=e170] [cursor=pointer]:
+                    - generic [ref=e171]: edit
+                  - button "delete" [ref=e172] [cursor=pointer]:
+                    - generic [ref=e173]: delete
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - generic [ref=e177]: image
+              - generic [ref=e178]: Limited availability
+            - generic [ref=e179]:
+              - heading "almara Maldives Resort" [level=3] [ref=e180]
+              - paragraph [ref=e181]: 4 Nights • From 26 Dec 2026 • Half Board • From Luton
+              - generic [ref=e182]:
+                - generic [ref=e183]: from £906
+                - generic [ref=e184]:
+                  - button "edit" [ref=e185] [cursor=pointer]:
+                    - generic [ref=e186]: edit
+                  - button "delete" [ref=e187] [cursor=pointer]:
+                    - generic [ref=e188]: delete
+          - generic [ref=e189]:
+            - generic [ref=e190]:
+              - generic [ref=e192]: image
+              - generic [ref=e193]: Limited availability
+            - generic [ref=e194]:
+              - heading "almara Maldives Resort" [level=3] [ref=e195]
+              - paragraph [ref=e196]: 4 Nights • From 26 Dec 2026 • Half Board • From Luton
+              - generic [ref=e197]:
+                - generic [ref=e198]: from £906
+                - generic [ref=e199]:
+                  - button "edit" [ref=e200] [cursor=pointer]:
+                    - generic [ref=e201]: edit
+                  - button "delete" [ref=e202] [cursor=pointer]:
+                    - generic [ref=e203]: delete
+  - alert [ref=e204]: Admin Panel | Sandlight Travels
+```

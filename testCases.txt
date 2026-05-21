@@ -7,3 +7,17 @@ Go to sandlighttravels home page
 4. validate the search hotel bar is displayed.
 5. validate the city, check in and checkout, number of people and citizen ship is displayed
 
+Register page-
+    - positive register user
+    - invalid email and valid password
+    - valid email and invalid password
+    - short password- 
+        -at least 8 characters
+        -number missing
+        -letter missing
+    - missing email field
+    - password mismatch
+    - duplicate email- 
+    - email too login
+    - all fields empty
+    

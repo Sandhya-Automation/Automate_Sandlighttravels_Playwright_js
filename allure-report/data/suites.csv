@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","12278","login authenticator","loginSetup","2026-05-08","passed","2026-05-08","","session.js","",""
+"","30169","Featured Deals","chromium","2026-05-08","broken","2026-05-08","","featureDeals.spec.js","",""

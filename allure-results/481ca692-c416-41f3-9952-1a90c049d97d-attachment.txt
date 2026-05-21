@@ -1,0 +1,9 @@
+destination: Paris
+checkin: 02/07/26
+Number of nights: 5
+Adults: 2
+Children: 2-12,9
+Children: 2
+child 12 age is: undefined
+child 9 age is: undefined
+Citizenship: United states

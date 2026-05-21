@@ -1,0 +1,175 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: session.js >> login authenticator
+- Location: tests/session.js:7:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//a[@href=\'/login\']')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - heading "Checking your browser before accessing test.sandlighttravels.co.uk" [level=1] [ref=e5]:
+    - text: Checking your browser before accessing
+    - text: test.sandlighttravels.co.uk
+  - paragraph [ref=e6]: Please wait for up to 5 seconds...
+```
+
+# Test source
+
+```ts
+  1   | import {expect} from '@playwright/test'
+  2   | import {getHotelDetails} from "../utils/excelHandling"
+  3   | import { start } from 'node:repl'
+  4   | 
+  5   | export class Home{
+  6   | 
+  7   |     constructor(page)
+  8   |     {
+  9   |         this.page=page
+  10  |         this.loginBtn=page.locator("//a[@href='/login']")
+  11  |         this.expandBtn=page.locator("//button[@id='btn-user-menu']/span[contains(text(),'expand_more')]")
+  12  |         this.adminPanelBtn=page.locator("//a[contains(text(),'Admin Panel')]")
+  13  |         this.statusMessage=page.locator("//div[@role='status']")
+  14  |         this.userNameBtn=page.locator("#btn-user-menu")
+  15  |         this.username=page.locator("//button[@id='btn-user-menu']//span[1]")
+  16  |         this.destination=page.locator("#destination")
+  17  |         this.selectDestination=page.locator("//input[@id='destination']/following-sibling::div//p[1]")
+  18  |         this.checkin=page.locator("//input[@id='checkin']")
+  19  |         this.checkout=page.locator("//input[@id='checkout']")
+  20  |         this.guests=page.locator("#btn-guests-toggle")
+  21  |         this.rooms_count=page.locator("#rooms-count")
+  22  |         this.adults_count=page.locator("#room-0-adults-count")
+  23  |         this.children_count=page.locator("#room-0-children-count")
+  24  |         this.adult_plus_btn=page.locator("#btn-room-0-adults-plus")
+  25  |         this.adult_minus_btn=page.locator("#btn-room-0-adults-minus")
+  26  |         this.child_plus_btn=page.locator("#btn-room-0-children-plus")
+  27  |         this.parentDivChildAges=(id)=>page.locator(`//div[@class='mt-2 space-y-1']/div/select[@id='select-room-0-child-${id}-age']`)
+  28  |         this.applyBtn=page.locator("#btn-guests-apply")
+  29  |         this.citizen_select=page.locator("#select-citizenship")
+  30  |         this.searchBtn=page.locator("#btn-search")
+  31  | 
+  32  | 
+  33  | 
+  34  |     }
+  35  |     async clickOnLogin(){
+> 36  |         await this.loginBtn.click()
+      |                             ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  37  |     }
+  38  |     async goToAdminPanel(){
+  39  |         await this.expandBtn.click()
+  40  |         await this.adminPanelBtn.click()
+  41  | 
+  42  |     }
+  43  |     async verifyUserBtn(){
+  44  |         await expect(this.userNameBtn).toBeVisible()
+  45  |     }
+  46  |     async waitForStatusToDisappear()
+  47  |     {
+  48  |         await expect(this.statusMessage).toBeHidden();
+  49  |     }
+  50  |     async verifyAdminPanel(){
+  51  |         console.log(await this.username.textContent())
+  52  |         await expect(this.username).toContainText("Admin")
+  53  |     }
+  54  |     async enterHotelDetails(hotelData){
+  55  | 
+  56  |         //this.getExcelData(hotelData)
+  57  |         // await this.destination.fill("paris")
+  58  |         // await this.page.waitForTimeout(4000)
+  59  |         // await this.selectDestination.first().click();
+  60  |         // await this.checkin.click()
+  61  |         
+  62  |         //get the search details from excelfile
+  63  |         //enter destination
+  64  |         console.log("destination:", hotelData.Destination)
+  65  |         await this.destination.fill(hotelData.Destination)
+  66  |         await this.page.waitForTimeout(2000)
+  67  |         await this.selectDestination.first().click();
+  68  |         //enter check in date
+  69  |         console.log("checkin:", hotelData.Checkin)
+  70  |         await this.checkin.click()
+  71  |         await this.checkin.fill(hotelData.Checkin)
+  72  | 
+  73  |         const dateArray=hotelData.Checkin.split('-');
+  74  |         const day=dateArray[2]
+  75  |         const month=dateArray[1]
+  76  |         const year=dateArray[0]
+  77  |         console.log("day:", day)
+  78  |         console.log("month:", month)
+  79  |         console.log("year:", year)
+  80  |       //  await this.page.pause();
+  81  |         //thraverse through shadow root to select the date from calendar
+  82  |         await this.checkin.scrollIntoViewIfNeeded()
+  83  |         const startdate=year+'/'+month+'/'+day;
+  84  |        // await this.checkin.click()
+  85  |       //  await this.checkin.fill(startdate);
+  86  |         console.log(startdate);
+  87  |         //set checkout with number of nights from start date
+  88  |         const endday=parseInt(day)+parseInt(hotelData.numberofnights);
+  89  |         const endDate=`${year}-${month}-${String(endday).padStart(2,'0')}`
+  90  | 
+  91  |         //const endDate=year+'-'+month+'-'+endday;
+  92  |         console.log("end date:",endDate)
+  93  |         console.log("Number of nights:", hotelData.numberofnights)
+  94  |         await this.checkout.click()
+  95  |         await this.checkout.fill(endDate)
+  96  |         //enter number of adults
+  97  |         console.log("Adults:", hotelData.Adults)
+  98  | 
+  99  |         await this.guests.click()
+  100 |         const adultsDisplayed=await this.adults_count.textContent()
+  101 |         if(adultsDisplayed==hotelData.Adults){
+  102 |             console.log("adults correct and skip to children")
+  103 |         }
+  104 |         else if(adultsDisplayed<hotelData.Adults)
+  105 |         {
+  106 |             while(await this.adults_count.textContent()<hotelData.Adults)
+  107 |             {
+  108 |                 await this.adult_plus_btn.click()
+  109 |             }
+  110 |         }
+  111 |         else if(adultsDisplayed>hotelData.Adults)
+  112 |         {
+  113 |             while(await this.adults_count.textContent()>hotelData.Adults)
+  114 |             {
+  115 |                 await this.adult_minus_btn.click()
+  116 |             }
+  117 |         }
+  118 | 
+  119 |         //get Children
+  120 |         console.log("Children:", hotelData.Children)
+  121 |         const childData=hotelData.Children.split('-')
+  122 |         //number of children
+  123 |         const children=childData[0];
+  124 |         //children ages
+  125 |         const childAges=childData[1].split(',')
+  126 |         const childrenDisplayed=await this.children_count.textContent()
+  127 |         console.log("children displayed:", childrenDisplayed)
+  128 |         console.log("Children:", children)
+  129 |         for(let i=0;i<childAges.length;i++)
+  130 |         {
+  131 |             
+  132 |             console.log("child",childAges[i])
+  133 |         }
+  134 |          if(childrenDisplayed==children){
+  135 |             console.log("children displayed correct")
+  136 |         }
+```

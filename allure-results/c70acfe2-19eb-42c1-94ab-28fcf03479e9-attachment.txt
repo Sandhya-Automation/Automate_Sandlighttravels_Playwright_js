@@ -1,0 +1,4 @@
+destination: undefined
+checkin: undefined
+Number of nights: undefined
+Adults: undefined

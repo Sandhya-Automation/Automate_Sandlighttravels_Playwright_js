@@ -5,7 +5,7 @@ import {Login} from "../pages/Login.js"
 
 test.describe('Login test', () =>{
   
-  test('login to slt', async({page})=>{
+  test.skip('login to slt', async({page})=>{
 
     await page.goto("https://test.sandlighttravels.co.uk/")
     const homeObj=new Home(page);

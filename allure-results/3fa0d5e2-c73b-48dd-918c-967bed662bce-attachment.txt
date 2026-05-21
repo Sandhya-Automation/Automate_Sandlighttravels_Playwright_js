@@ -1,0 +1,5 @@
+destination: Paris
+checkin: 2026-07-02
+day: 02
+month: 07
+year: 2026

@@ -1,0 +1,570 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: bookingStatusPage.spec.js >> Booking flow >> Valid booking hotel
+- Location: tests/bookingStatusPage.spec.js:9:1
+
+# Error details
+
+```
+TypeError: Cannot read properties of undefined (reading 'split')
+```
+
+```
+Error: page.waitForTimeout: Test ended.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Sandlight Travels SandlightTravels" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Sandlight Travels" [ref=e5]
+        - heading "SandlightTravels" [level=1] [ref=e6]
+      - navigation [ref=e7]:
+        - link "Home" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "Hotels" [ref=e9] [cursor=pointer]:
+          - /url: /hotels/search
+        - button "Experiences expand_more" [ref=e11] [cursor=pointer]:
+          - text: Experiences
+          - generic [ref=e12]: expand_more
+        - link "About" [ref=e13] [cursor=pointer]:
+          - /url: /about
+        - link "My Bookings" [ref=e14] [cursor=pointer]:
+          - /url: /account/bookings
+      - generic [ref=e15]:
+        - button "Toggle dark mode" [ref=e16] [cursor=pointer]:
+          - generic [ref=e17]: dark_mode
+        - button "A Admin expand_more" [ref=e19] [cursor=pointer]:
+          - generic [ref=e20]: A
+          - generic [ref=e21]: Admin
+          - generic [ref=e22]: expand_more
+  - main [ref=e23]:
+    - generic [ref=e24]:
+      - img "Pristine tropical white sand beach with turquoise water" [ref=e27]
+      - generic [ref=e28]:
+        - heading "Find Your Perfect Escape" [level=2] [ref=e29]
+        - paragraph [ref=e30]: UK's trusted travel experts with full financial protection.
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - generic [ref=e34]: Destination
+            - generic [ref=e35]:
+              - generic [ref=e36]: location_on
+              - textbox "Where are you going?" [ref=e37]
+          - generic [ref=e38]:
+            - generic [ref=e39]: Check-in
+            - generic [ref=e40]:
+              - generic [ref=e41]: calendar_today
+              - textbox [ref=e42]: 2026-05-09
+          - generic [ref=e43]:
+            - generic [ref=e44]: Check-out
+            - generic [ref=e45]:
+              - generic [ref=e46]: calendar_today
+              - textbox [ref=e47]: 2026-05-10
+          - generic [ref=e48]:
+            - generic [ref=e49]: Guests
+            - generic [ref=e50]:
+              - generic [ref=e51]: person
+              - button "2Ad, 1 Ro" [ref=e52] [cursor=pointer]
+          - generic [ref=e53]:
+            - generic [ref=e54]: Citizenship
+            - generic [ref=e55]:
+              - generic [ref=e56]: flag
+              - combobox [ref=e57] [cursor=pointer]:
+                - option "Select..." [selected]
+                - option "Afghanistan"
+                - option "Albania"
+                - option "Algeria"
+                - option "American Samoa"
+                - option "Andorra"
+                - option "Angola"
+                - option "Antigua and Barbuda"
+                - option "Argentina"
+                - option "Armenia"
+                - option "Aruba"
+                - option "Australia"
+                - option "Austria"
+                - option "Azerbaijan"
+                - option "Bahamas"
+                - option "Bahrain"
+                - option "Bangladesh"
+                - option "Barbados"
+                - option "Belarus"
+                - option "Belgium"
+                - option "Belize"
+                - option "Benin"
+                - option "Bermuda"
+                - option "Bhutan"
+                - option "Bolivia"
+                - option "Bonaire, Sint Eustatius and Saba"
+                - option "Bosnia and Herzegovina"
+                - option "Botswana"
+                - option "Bouvet Island"
+                - option "Brazil"
+                - option "British Indian Ocean Territory"
+                - option "Brunei Darussalam"
+                - option "Bulgaria"
+                - option "Burkina Faso"
+                - option "Burundi"
+                - option "Cabo Verde"
+                - option "Cambodia"
+                - option "Cameroon"
+                - option "Canada"
+                - option "Cayman Islands"
+                - option "Central African Republic"
+                - option "Chad"
+                - option "Chile"
+                - option "China"
+                - option "Christmas Island"
+                - option "Cocos (Keeling) Islands"
+                - option "Colombia"
+                - option "Comoros"
+                - option "Congo"
+                - option "Congo (Democratic Republic)"
+                - option "Cook Islands"
+                - option "Costa Rica"
+                - option "Côte d'Ivoire"
+                - option "Croatia"
+                - option "Cuba"
+                - option "Curaçao"
+                - option "Cyprus"
+                - option "Czechia"
+                - option "Denmark"
+                - option "Djibouti"
+                - option "Dominica"
+                - option "Dominican Republic"
+                - option "Ecuador"
+                - option "Egypt"
+                - option "El Salvador"
+                - option "Equatorial Guinea"
+                - option "Eritrea"
+                - option "Estonia"
+                - option "Eswatini"
+                - option "Ethiopia"
+                - option "Falkland Islands"
+                - option "Faroe Islands"
+                - option "Fiji"
+                - option "Finland"
+                - option "France"
+                - option "French Guiana"
+                - option "French Polynesia"
+                - option "French Southern Territories"
+                - option "Gabon"
+                - option "Gambia"
+                - option "Georgia"
+                - option "Germany"
+                - option "Ghana"
+                - option "Gibraltar"
+                - option "Greece"
+                - option "Greenland"
+                - option "Grenada"
+                - option "Guadeloupe"
+                - option "Guam"
+                - option "Guatemala"
+                - option "Guernsey"
+                - option "Guinea"
+                - option "Guinea-Bissau"
+                - option "Guyana"
+                - option "Haiti"
+                - option "Heard Island and McDonald Islands"
+                - option "Holy See"
+                - option "Honduras"
+                - option "Hong Kong"
+                - option "Hungary"
+                - option "Iceland"
+                - option "India"
+                - option "Indonesia"
+                - option "Iran"
+                - option "Iraq"
+                - option "Ireland"
+                - option "Isle of Man"
+                - option "Israel"
+                - option "Italy"
+                - option "Jamaica"
+                - option "Japan"
+                - option "Jersey"
+                - option "Jordan"
+                - option "Kazakhstan"
+                - option "Kenya"
+                - option "Kiribati"
+                - option "Korea (North)"
+                - option "Korea (South)"
+                - option "Kuwait"
+                - option "Kyrgyzstan"
+                - option "Lao"
+                - option "Latvia"
+                - option "Lebanon"
+                - option "Lesotho"
+                - option "Liberia"
+                - option "Libya"
+                - option "Liechtenstein"
+                - option "Lithuania"
+                - option "Luxembourg"
+                - option "Macao"
+                - option "Madagascar"
+                - option "Malawi"
+                - option "Malaysia"
+                - option "Maldives"
+                - option "Mali"
+                - option "Malta"
+                - option "Marshall Islands"
+                - option "Martinique"
+                - option "Mauritania"
+                - option "Mauritius"
+                - option "Mayotte"
+                - option "Mexico"
+                - option "Micronesia"
+                - option "Moldova"
+                - option "Monaco"
+                - option "Mongolia"
+                - option "Montenegro"
+                - option "Montserrat"
+                - option "Morocco"
+                - option "Mozambique"
+                - option "Myanmar"
+                - option "Namibia"
+                - option "Nauru"
+                - option "Nepal"
+                - option "Netherlands"
+                - option "New Caledonia"
+                - option "New Zealand"
+                - option "Nicaragua"
+                - option "Niger"
+                - option "Nigeria"
+                - option "Niue"
+                - option "Norfolk Island"
+                - option "North Macedonia"
+                - option "Northern Mariana Islands"
+                - option "Norway"
+                - option "Oman"
+                - option "Pakistan"
+                - option "Palau"
+                - option "Palestine"
+                - option "Panama"
+                - option "Papua New Guinea"
+                - option "Paraguay"
+                - option "Peru"
+                - option "Philippines"
+                - option "Pitcairn"
+                - option "Poland"
+                - option "Portugal"
+                - option "Puerto Rico"
+                - option "Qatar"
+                - option "Réunion"
+                - option "Romania"
+                - option "Russian Federation"
+                - option "Rwanda"
+                - option "Saint Barthélemy"
+                - option "Saint Helena"
+                - option "Saint Kitts and Nevis"
+                - option "Saint Lucia"
+                - option "Saint Martin"
+                - option "Saint Pierre and Miquelon"
+                - option "Saint Vincent and the Grenadines"
+                - option "Samoa"
+                - option "San Marino"
+                - option "Sao Tome and Principe"
+                - option "Saudi Arabia"
+                - option "Senegal"
+                - option "Serbia"
+                - option "Seychelles"
+                - option "Sierra Leone"
+                - option "Singapore"
+                - option "Sint Maarten"
+                - option "Slovakia"
+                - option "Slovenia"
+                - option "Solomon Islands"
+                - option "Somalia"
+                - option "South Africa"
+                - option "South Georgia"
+                - option "South Sudan"
+                - option "Spain"
+                - option "Sri Lanka"
+                - option "Sudan"
+                - option "Suriname"
+                - option "Svalbard and Jan Mayen"
+                - option "Sweden"
+                - option "Switzerland"
+                - option "Syria"
+                - option "Taiwan"
+                - option "Tajikistan"
+                - option "Tanzania"
+                - option "Thailand"
+                - option "Timor-Leste"
+                - option "Togo"
+                - option "Tokelau"
+                - option "Tonga"
+                - option "Trinidad and Tobago"
+                - option "Tunisia"
+                - option "Türkiye"
+                - option "Turkmenistan"
+                - option "Turks and Caicos Islands"
+                - option "Tuvalu"
+                - option "Uganda"
+                - option "Ukraine"
+                - option "United Arab Emirates"
+                - option "United Kingdom"
+                - option "United States"
+                - option "United States Minor Outlying Islands"
+                - option "Uruguay"
+                - option "Uzbekistan"
+                - option "Vanuatu"
+                - option "Venezuela"
+                - option "Viet Nam"
+                - option "Virgin Islands (British)"
+                - option "Virgin Islands (U.S.)"
+                - option "Wallis and Futuna"
+                - option "Western Sahara"
+                - option "Yemen"
+                - option "Zambia"
+                - option "Zimbabwe"
+          - button "search" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: search
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e64]: verified_user
+        - heading "Fully Protected" [level=3] [ref=e65]
+        - paragraph [ref=e66]: Your money is 100% safe
+      - generic [ref=e67]:
+        - generic [ref=e69]: headset_mic
+        - heading "24/7 Support" [level=3] [ref=e70]
+        - paragraph [ref=e71]: Always here to help you
+      - generic [ref=e72]:
+        - generic [ref=e74]: star
+        - heading "Expert Advice" [level=3] [ref=e75]
+        - paragraph [ref=e76]: Personal travel specialists
+      - generic [ref=e77]:
+        - generic [ref=e79]: payments
+        - heading "Best Price Promise" [level=3] [ref=e80]
+        - paragraph [ref=e81]: Unbeatable value guaranteed
+    - generic [ref=e83]:
+      - heading "Trending Destinations" [level=2] [ref=e84]
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - img "Traditional Japanese temple with blossoms" [ref=e87]
+          - generic [ref=e89]:
+            - heading "Japan" [level=4] [ref=e90]
+            - paragraph [ref=e91]: Authentic Culture
+        - generic [ref=e92]:
+          - img "Sunset over African Savannah with wildlife" [ref=e93]
+          - generic [ref=e95]:
+            - heading "Kenya" [level=4] [ref=e96]
+            - paragraph [ref=e97]: Safari Adventures
+        - generic [ref=e98]:
+          - img "Iceland northern lights over waterfall" [ref=e99]
+          - generic [ref=e101]:
+            - heading "Iceland" [level=4] [ref=e102]
+            - paragraph [ref=e103]: Natural Wonders
+        - generic [ref=e104]:
+          - img "Sydney Opera House at dusk" [ref=e105]
+          - generic [ref=e107]:
+            - heading "Australia" [level=4] [ref=e108]
+            - paragraph [ref=e109]: Coastal Living
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - heading "What Our Customers Say" [level=2] [ref=e112]
+        - link "Google star star star star star 5 (6 reviews)" [ref=e113] [cursor=pointer]:
+          - /url: https://www.google.com/search?kgmid=/g/11ymly9hnl#lrd=0x0:0xc3e974eebe978de6,1,,,
+          - img "Google" [ref=e114]
+          - generic [ref=e115]:
+            - generic [ref=e116]: star
+            - generic [ref=e117]: star
+            - generic [ref=e118]: star
+            - generic [ref=e119]: star
+            - generic [ref=e120]: star
+          - generic [ref=e121]: "5"
+          - generic [ref=e122]: (6 reviews)
+      - generic [ref=e123]:
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - generic [ref=e126]:
+              - generic [ref=e127]: star
+              - generic [ref=e128]: star
+              - generic [ref=e129]: star
+              - generic [ref=e130]: star
+              - generic [ref=e131]: star
+            - img "Google" [ref=e132]
+          - paragraph [ref=e133]: Sandhya has helped us in planning our holiday to Paris. The hotel was in a perfect location and had a very good stay. We took a Eurostar from London to Paris and I would definitely recommend specially if you have young kids. Thanks again for Sandhya for organising a wonderful trip. Highly recommend Sandlight Travels.
+          - generic [ref=e134]:
+            - generic [ref=e135]: AA
+            - generic [ref=e136]:
+              - paragraph [ref=e137]: Ashwin Arroju
+              - paragraph [ref=e138]: a week ago
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]: star
+              - generic [ref=e143]: star
+              - generic [ref=e144]: star
+              - generic [ref=e145]: star
+              - generic [ref=e146]: star
+            - img "Google" [ref=e147]
+          - paragraph [ref=e148]: Excellent communications throughout and a extremely competitive price for a 5 star holiday - thanks and we will definitely travel through SL again.
+          - generic [ref=e149]:
+            - generic [ref=e150]: AP
+            - generic [ref=e151]:
+              - paragraph [ref=e152]: Amrish Patel
+              - paragraph [ref=e153]: a month ago
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - generic [ref=e156]:
+              - generic [ref=e157]: star
+              - generic [ref=e158]: star
+              - generic [ref=e159]: star
+              - generic [ref=e160]: star
+              - generic [ref=e161]: star
+            - img "Google" [ref=e162]
+          - paragraph [ref=e163]: Excellent service from the travel agency that helped us plan our trip to Antalya, Turkey. Their response was really amazing, very quick, and supportive throughout. Highly recommended if you need any travel assistance!
+          - generic [ref=e164]:
+            - generic [ref=e165]: HG
+            - generic [ref=e166]:
+              - paragraph [ref=e167]: Harish Gunda
+              - paragraph [ref=e168]: 2 months ago
+      - link "See all Google reviews open_in_new" [ref=e170] [cursor=pointer]:
+        - /url: https://www.google.com/search?kgmid=/g/11ymly9hnl#lrd=0x0:0xc3e974eebe978de6,1,,,
+        - text: See all Google reviews
+        - generic [ref=e171]: open_in_new
+    - generic [ref=e173]:
+      - generic [ref=e175]: mail
+      - generic [ref=e176]:
+        - heading "Stay in the Loop" [level=2] [ref=e177]
+        - paragraph [ref=e178]: Join 50,000+ travel lovers and get exclusive secret deals delivered to your inbox every week.
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - textbox "Your email address" [ref=e181]
+            - button "Subscribe" [ref=e182] [cursor=pointer]
+          - paragraph [ref=e183]: We respect your privacy. Unsubscribe at any time.
+  - contentinfo [ref=e184]:
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - img "Sandlight Travels" [ref=e189]
+            - heading "Sandlight Travels" [level=2] [ref=e190]
+          - paragraph [ref=e191]: Leading UK independent travel agency. We combine expert knowledge with unbeatable service to create your perfect getaway.
+          - list [ref=e192]:
+            - listitem [ref=e193]:
+              - generic [ref=e194]: call
+              - link "0800 031 5285" [ref=e195] [cursor=pointer]:
+                - /url: tel:08000315285
+            - listitem [ref=e196]:
+              - generic [ref=e197]: mail
+              - link "info@sandlighttravels.co.uk" [ref=e198] [cursor=pointer]:
+                - /url: mailto:info@sandlighttravels.co.uk
+            - listitem [ref=e199]:
+              - img [ref=e200]
+              - link "WhatsApp Us" [ref=e202] [cursor=pointer]:
+                - /url: https://wa.me/447425910458?text=Good%20day%2C%20I%20am%20writing%20to%20enquire%20about%20a%20holiday%20package.
+          - generic [ref=e203]:
+            - link [ref=e204] [cursor=pointer]:
+              - /url: https://www.facebook.com/sandlighttravels
+              - img [ref=e205]
+            - link [ref=e207] [cursor=pointer]:
+              - /url: https://www.instagram.com/sandlighttravels
+              - img [ref=e208]
+            - link [ref=e210] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/sandlighttravels
+              - img [ref=e211]
+        - generic [ref=e213]:
+          - heading "Quick Links" [level=4] [ref=e214]
+          - list [ref=e215]:
+            - listitem [ref=e216]:
+              - link "About Us" [ref=e217] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e218]:
+              - link "Contact Us" [ref=e219] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e220]:
+              - link "Transfers" [ref=e221] [cursor=pointer]:
+                - /url: /experiences/transfers
+            - listitem [ref=e222]:
+              - link "Airport Lounges" [ref=e223] [cursor=pointer]:
+                - /url: /experiences/lounges
+            - listitem [ref=e224]:
+              - link "Tours & Activities" [ref=e225] [cursor=pointer]:
+                - /url: /experiences/get-your-guide
+            - listitem [ref=e226]:
+              - link "Travel Insurance" [ref=e227] [cursor=pointer]:
+                - /url: /experiences/travel-insurance
+        - generic [ref=e228]:
+          - heading "Support" [level=4] [ref=e229]
+          - list [ref=e230]:
+            - listitem [ref=e231]:
+              - link "Manage Booking" [ref=e232] [cursor=pointer]:
+                - /url: /account/bookings
+            - listitem [ref=e233]:
+              - link "Financial Protection" [ref=e234] [cursor=pointer]:
+                - /url: /protection
+            - listitem [ref=e235]:
+              - link "Terms & Conditions" [ref=e236] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e237]:
+              - link "Privacy Policy" [ref=e238] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e239]:
+              - link "Cookie Policy" [ref=e240] [cursor=pointer]:
+                - /url: /cookies
+        - generic [ref=e241]:
+          - heading "Our Partners" [level=4] [ref=e242]
+          - generic [ref=e243]:
+            - generic [ref=e244]: easyJet
+            - generic [ref=e245]: TUI
+            - generic [ref=e246]: Jet2
+            - generic [ref=e247]: P&O Cruises
+            - generic [ref=e248]: MSC Cruises
+            - generic [ref=e249]: RCI
+          - paragraph [ref=e250]: Partnered with the UK's leading travel operators to bring you the best deals.
+      - generic [ref=e251]:
+        - paragraph [ref=e252]: © 2026 Sandlight Travels. All rights reserved.
+        - generic [ref=e253]:
+          - img "Visa logo" [ref=e254]
+          - img "Mastercard logo" [ref=e255]
+  - link [ref=e256] [cursor=pointer]:
+    - /url: https://wa.me/447425910458?text=Good%20day%2C%20I%20am%20writing%20to%20enquire%20about%20a%20holiday%20package.
+    - img [ref=e257]
+  - alert [ref=e259]
+```
+
+# Test source
+
+```ts
+  1  | import {test, expect} from "@playwright/test"
+  2  | import { Home } from "../pages/Home"
+  3  | import { Login} from "../pages/Login"
+  4  | import { readJsonData } from "../utils/jsonHandling"
+  5  | import {getHotelDetails} from "../utils/excelHandling"
+  6  | 
+  7  | 
+  8  | test.describe("Booking flow", ()=>{
+  9  | test("Valid booking hotel", async({page})=>{
+  10 |     await page.goto("https://test.sandlighttravels.co.uk/")
+  11 |     await page.waitForTimeout(5000)
+  12 |     const homeObj=new Home(page);
+  13 |     // await homeObj.clickOnLogin()
+  14 |     // const credsFile="testData/creds.json"
+  15 |     // const credsData=readJsonData(credsFile)
+  16 |     const loginObj=new Login(page)
+  17 |     //await loginObj.loginToSLT(credsData.user.username, credsData.user.password);
+  18 |     await homeObj.verifyUserBtn()
+  19 |     await page.waitForTimeout(3000)
+  20 |     const file="testData/creds_xlsx.xlsx"
+  21 |     const hotelData=getHotelDetails(file,"searchHotels")
+  22 |     await homeObj.enterHotelDetails(hotelData);
+> 23 |     await page.waitForTimeout(5000)
+     |                ^ Error: page.waitForTimeout: Test ended.
+  24 |     
+  25 | 
+  26 | 
+  27 | })
+  28 | 
+  29 | })
+```

@@ -3,28 +3,39 @@ import {Home} from "../pages/Home.js"
 import {Login} from "../pages/Login.js"
 import {AdminDashboard} from "../pages/AdminDashboard.js"
 import {FeatureDealsPage} from "../pages/FeatureDealsPage.js"
+import { navigateToFeatureDeals, addFeatureDeal } from '../helpers/featureDealsFlow.js';
 
 
-test.only('Featured Deals', async ({page}) => {
+test('Featured Deals', {tag:["@smoke", "@regression"]}, async ({page}) => {
   
-    await page.goto("https://test.sandlighttravels.co.uk/")
-    const homeObj=new Home(page);
-    await homeObj.clickOnLogin()
-    const loginObj=new Login(page)
-    await loginObj.loginToSLT()
-    await page.waitForTimeout(5000);
-    await homeObj.waitForStatusToDisappear()
-    await homeObj.verifyAdminPanel()
-    homeObj.goToAdminPanel()
-    const dashboard=new AdminDashboard(page)
-    dashboard.clickOnFeaturedDeals();
-    await page.waitForTimeout(5000);
-    const featurePageObj=new FeatureDealsPage(page)
-    //await page.waitForTimeout(3000)
-    const hotelName=await featurePageObj.addFeatureDeals()
-    await console.log("hotelName:",hotelName)
-    await page.waitForTimeout(5000)
-    featurePageObj.verifyFeatureDealAdded(hotelName)
+    //Launch the website 
+    await page.goto("/")
+    //login as admin
+    await navigateToFeatureDeals(page)
+
+    // const homeObj=new Home(page);
+    // // await homeObj.clickOnLogin()
+    // const loginObj=new Login(page)
+    // await loginObj.loginToSLT()
+    // await page.waitForTimeout(5000);
+    // await homeObj.waitForStatusToDisappear()
+   // await homeObj.verifyAdminPanel()
+    // homeObj.goToAdminPanel()
+    // const dashboard=new AdminDashboard(page)
+    // dashboard.clickOnFeaturedDeals();
+    // //await page.pause()
+    // await page.waitForTimeout(5000);
+    
+    //Add new feature deal
+    await addFeatureDeal(page)
+
+    // const featurePageObj=new FeatureDealsPage(page)
+    // //await page.waitForTimeout(3000)
+    // const hotelName=await featurePageObj.addFeatureDeals()
+    // await console.log("hotelName:",hotelName)
+    // await page.waitForTimeout(5000)
+
+   // featurePageObj.verifyFeatureDealAdded(hotelName)
    //await page.waitForTimeout(5000)
 });
 //  test("add feature deals", async({page})=> {

@@ -1,11 +1,18 @@
 {
     "admin": {
         "username": "admin@sandlighttravels.co.uk",
-        "password": "test@123"
+        "password": "test@123",
+        "firstname": "Admin"
     },
     "user": {
         "username": "testsltravels@gmail.com",
-        "password": "test@123"
+        "password": "test@123",
+        "firstname": "test"
 
+    },
+    "staff":{
+        "username": "sandhya.vanga@gmail.com",
+        "password": "test@123",
+        "firstname": "Sandhya"
     }
 }

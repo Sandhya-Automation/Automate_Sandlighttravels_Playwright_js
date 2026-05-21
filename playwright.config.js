@@ -14,13 +14,14 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
-  reporter: 'html',
+  //reporter: 'html',
+  //reporter:[["allure-playwright"]],
   workers:4,
   expect:{
     timeout:20000,
   },
-  timeout:30000,
-
+  timeout:60000,
+  
   /* Run tests in files in parallel */
  // fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -34,20 +35,28 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'https://test.sandlighttravels.co.uk/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on-all-retries',
+    headless: false,
     screenshot: 'only-on-failure',
     viewport: {height: 720, width:1280}
   },
 
   /* Configure projects for major browsers */
   projects: [
+    // {
+    //   name:'loginSetup',
+    //   testMatch:'tests/loginSetup.js',
+    // },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], launchOptions:{ slowMo:1000,} },
-      
+      use: { ...devices['Desktop Chrome'], launchOptions:{ slowMo:1000,}, 
+      //storageState:"testData/cookies.json",
+    },
+   //dependencies: ['loginSetup'],
+     
       
     },
 

@@ -4,28 +4,25 @@ import {Login} from "../pages/Login.js"
 import {AdminDashboard} from "../pages/AdminDashboard.js"
 import {FeatureDealsPage} from "../pages/FeatureDealsPage.js"
 import { navigateToFeatureDeals, addFeatureDeal } from '../helpers/featureDealsFlow.js';
+import {readJsonData} from "../utils/jsonHandling.js"
+import { login } from '../helpers/authFlow.js';
+
+
+//global variables
+const credsFile = "testData/creds.json"
+const data=readJsonData(credsFile)
 
 
 test('Featured Deals', {tag:["@smoke", "@regression"]}, async ({page}) => {
   
     //Launch the website 
     await page.goto("/")
+
     //login as admin
+    let fname=login(page, data, "admin")
+    //navigate to the admin dashboard and go to featire deals
     await navigateToFeatureDeals(page)
 
-    // const homeObj=new Home(page);
-    // // await homeObj.clickOnLogin()
-    // const loginObj=new Login(page)
-    // await loginObj.loginToSLT()
-    // await page.waitForTimeout(5000);
-    // await homeObj.waitForStatusToDisappear()
-   // await homeObj.verifyAdminPanel()
-    // homeObj.goToAdminPanel()
-    // const dashboard=new AdminDashboard(page)
-    // dashboard.clickOnFeaturedDeals();
-    // //await page.pause()
-    // await page.waitForTimeout(5000);
-    
     //Add new feature deal
     await addFeatureDeal(page)
 

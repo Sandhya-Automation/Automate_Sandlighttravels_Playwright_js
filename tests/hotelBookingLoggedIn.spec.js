@@ -5,14 +5,18 @@ import { readJsonData } from "../utils/jsonHandling"
 import { getHotelDetails } from "../utils/excelHandling"
 import { navigateToHotelResults } from "../helpers/searchFlow.js"
 import { getBookingReferenceNumber, navigateToBookingConfirmation, navigateToBookingReview, navigateToBookingStatus, navigateToRoomSelection } from "../helpers/bookingFlow.js"
-import {loginAsUser} from "../helpers/authFlow.js"
+import {login} from "../helpers/authFlow.js"
+
+//global variables
+const credsFile="testData/creds.json"
+const data=readJsonData(credsFile)
 
 //{tag:'@smoke'} or tag:['@smoke','@regression','@bookingFlow']
 test.describe("Booking flow", () => {
   test("Logged-in Valid booking hotel with free cancellation", { tag: ['@smoke', '@regression'] }, async ({ page }) => {
 
-    await page.goto('')
-    await loginAsUser(page)
+    await page.goto('/')
+    let fname=await login(page, data, "user")
     //get the hotel data from xlsx file and enter the details
     const file = "testData/creds_xlsx.xlsx"
     const hotelData = getHotelDetails(file, "searchHotels")
@@ -44,9 +48,9 @@ test.describe("Booking flow", () => {
 
   
   test("Valid booking hotel without free cancellation", async ({ page }) => {
-    await page.goto('')
+    await page.goto('/')
     //login as a user
-    await loginAsUser(page)
+    let fname=await login(page, data, "user")
     //get the hotel data from xlsx file and enter the details
     const file = "testData/creds_xlsx.xlsx"
     const hotelData = getHotelDetails(file, "searchHotels")

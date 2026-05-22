@@ -10,11 +10,9 @@ import {verifyUserExists} from "../helpers/adminFlow.js"
 import fs from 'fs'
 
 //global variables
-const authFile="testData/cookies.json"
 const credsFile = "testData/creds.json"
-const data = JSON.parse(fs.readFileSync(credsFile, 'utf-8'))
+const data=readJsonData(credsFile)
 let userFirstName
-
 
 test.describe.only("Login positive tests", ()=>{
   test('User register at SLT', async({page}) =>{
@@ -35,8 +33,13 @@ test('Admin validates the user', async({page}) =>{
     const page1 = await context.newPage()
     await page1.goto("/")
     await page1.waitForTimeout(2000)
-    await login(page1, data, "admin")
+
+    //get credsfrom json file
+    let fname= await login(page1, data, "admin")
+
+    //go to admin panel
     await goToAdminPanel(page1)
+    //verify the user
     await verifyUserExists(page1, userFirstName)
     
 })

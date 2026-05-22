@@ -4,10 +4,11 @@ import {Home} from "../pages/Home.js"
 import {Login} from "../pages/Login.js"
 import fs from 'fs'
 import {login, verifyFirstName} from "../helpers/authFlow.js"
+import {readJsonData} from "../utils/jsonHandling.js"
 
-const authFile="testData/cookies.json"
+//global variables
 const credsFile = "testData/creds.json"
-const data = JSON.parse(fs.readFileSync(credsFile, 'utf-8'))
+const data=readJsonData(credsFile)
 
 test.describe('Login test', () =>{
   

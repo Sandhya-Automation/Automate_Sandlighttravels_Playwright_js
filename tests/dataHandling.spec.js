@@ -3,7 +3,7 @@ import {Register} from "../pages/register.js"
 import fs from 'fs'
 import {getCsvData} from "../utils/csvHanding.js"
 import {getExcelData} from "../utils/excelHandling.js"
-
+import {readJsonData} from "../utils/jsonHandling.js"
 
 
 const filePath="testData/creds.json"

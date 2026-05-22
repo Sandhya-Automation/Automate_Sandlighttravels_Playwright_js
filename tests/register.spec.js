@@ -4,81 +4,64 @@ import {Login} from "../pages/Login.js"
 import {readJsonData} from "../utils/jsonHandling.js"
 import { AdminDashboard } from '../pages/AdminDashboard.js';
 import { Home } from '../pages/Home.js';
+import {login, verifyFirstName} from "../helpers/authFlow.js"
+import {registerUser, goToAdminPanel} from "../helpers/authFlow.js"
+import {verifyUserExists} from "../helpers/adminFlow.js"
+import fs from 'fs'
+
+//global variables
+const authFile="testData/cookies.json"
+const credsFile = "testData/creds.json"
+const data = JSON.parse(fs.readFileSync(credsFile, 'utf-8'))
+let userFirstName
+
 
 test.describe.only("Login positive tests", ()=>{
   test('User register at SLT', async({page}) =>{
-    await page.goto("https://test.sandlighttravels.co.uk/register")
-    await page.waitForTimeout(5000)
-    const registerObj = new Register(page)
-    await registerObj.fillRegistrationForm("test1", "test", "svprocollections@gmail.com", "Pass@123", "Pass@123")
-    await page.waitForTimeout(5000)
-    await registerObj.clickRegisterButton();
-    await page.waitForTimeout(5000)
+    await page.goto("/register")
+    await page.waitForTimeout(2000)
+    userFirstName=await registerUser(page)
 
-})
+  })
 test('Admin validates the user', async({page}) =>{
-  //launch the sandlighttravels application and register a new user
-    await page.goto("https://test.sandlighttravels.co.uk/")
-    await page.waitForTimeout(5000)
-    //create an objett for register page and fill the registration form and submit
-    // const registerObj = new Register(page)
-    // await registerObj.fillRegistrationForm("test6", "test", "svprocollections6@gmail.com", "07986654321", "Pass@123", "Pass@123")
-    // const username=await registerObj.getUsername()
-    // console.log("Registered username:", username)
-    // await page.waitForTimeout(5000)
-    // await registerObj.clickRegisterButton();
-    // await page.waitForTimeout(5000)
-    // //veryfy the check your email message
-    // await registerObj.verifyYourEmail()
-    //open a new context in the same browser and login as admin
+    //launch the sandlighttravels application and register a new user
+    await page.goto("/register")
+    userFirstName=await registerUser(page)
+    await page.waitForTimeout(2000)
+
+    //login as admin in another context
     const browser = page.context().browser()
     const context = await browser.newContext()
     const page1 = await context.newPage()
-    await page1.goto("https://test.sandlighttravels.co.uk/")
-    //await page1.waitForLoadState('networkidle')
-    page1.waitForTimeout(8000)
-    //admin login
-    const homeObj=new Home(page1)
-    console.log("we are on home page")
-    //await page1.pause()
-    // await homeObj.clickOnLogin()  
-    // const loginObj=new Login(page1)
-    // const credsFile="testData/creds.json"
-    // const jsonData=readJsonData(credsFile)
-    // await loginObj.loginToSLT(jsonData.admin.username,jsonData.admin.password)
-    // await page1.waitForTimeout(5000)
-    await homeObj.goToAdminPanel()
-    const dashboard=new AdminDashboard(page1)
-    await page1.waitForTimeout(5000);
-    //navigate to user management page and verify the newly registered user
-    await dashboard.clickOnUserManagement()
-    await page1.waitForTimeout(5000)
-    await dashboard.verifyNewUser("test6");
-    await page1.waitForTimeout(5000)
-    //close the new context
-    await context.close()
+    await page1.goto("/")
+    await page1.waitForTimeout(2000)
+    await login(page1, data, "admin")
+    await goToAdminPanel(page1)
+    await verifyUserExists(page1, userFirstName)
+    
 })
 //test.use({storageState:[]})
-test('User register at SLT and Admin validates the user', async({page}) =>{
+test.skip('User register at SLT and Admin validates the user', async({page}) =>{
   //launch the sandlighttravels application and register a new user
-    await page.goto("https://test.sandlighttravels.co.uk/register")
-    await page.waitForTimeout(5000)
+    await page.goto("/register")
+    await page.waitForTimeout(2000)
     //create an objett for register page and fill the registration form and submit
     const registerObj = new Register(page)
     await registerObj.fillRegistrationForm("test6", "test", "svprocollections6@gmail.com", "07986654321", "Pass@123", "Pass@123")
     const username=await registerObj.getUsername()
     console.log("Registered username:", username)
-    await page.waitForTimeout(5000)
+    await page.waitForTimeout(2000)
     await registerObj.clickRegisterButton();
-    await page.waitForTimeout(5000)
+    await page.waitForTimeout(2000)
     //veryfy the check your email message
     await registerObj.verifyYourEmail()
+
     //open a new context in the same browser and login as admin
     const browser = page.context().browser()
     const context = await browser.newContext()
     const page1 = await context.newPage()
-    await page1.goto("https://test.sandlighttravels.co.uk/")
-    await page1.waitForTimeout(5000)
+    await page1.goto("/")
+    await page1.waitForTimeout(2000)
     //admin login
     const homeObj=new Home(page1)
     console.log("we are on home page")
@@ -88,16 +71,16 @@ test('User register at SLT and Admin validates the user', async({page}) =>{
     const credsFile="testData/creds.json"
     const jsonData=readJsonData(credsFile)
     await loginObj.loginToSLT(jsonData.admin.username,jsonData.admin.password)
-    await page1.waitForTimeout(5000)
+    await page1.waitForTimeout(2000)
     await homeObj.goToAdminPanel()
     const dashboard=new AdminDashboard(page1)
-    await page1.waitForTimeout(5000);
+    await page1.waitForTimeout(2000);
     //navigate to user management page and verify the newly registered user
     await dashboard.clickOnUserManagement()
     await page1.waitForLoadState('networkidle')
     //await page1.waitForTimeout(5000)
     await dashboard.verifyNewUser("test6");
-    await page1.waitForTimeout(5000)
+    await page1.waitForTimeout(2000)
     //close the new context
     await context.close()
 })

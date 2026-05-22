@@ -49,6 +49,11 @@ export class Home{
     {
         await expect(this.statusMessage).toBeHidden();
     }
+
+    async verifyUserFirstName(firstname){
+        await expect(this.firstname).toContainText(firstname)
+    }
+    //we don't need this method
     async verifyUsernamePanel(username){
         const credsFile="testData/creds.json"
         const data=JSON.parse(fs.readFileSync(credsFile, 'utf-8'))

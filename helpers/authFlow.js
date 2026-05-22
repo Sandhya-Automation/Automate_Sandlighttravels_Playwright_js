@@ -2,47 +2,46 @@ import { test, expect } from "@playwright/test"
 import fs from 'fs'
 import {Home} from "../pages/Home.js"
 import {Login} from "../pages/Login.js"
+import {Register} from "../pages/Register.js"
+import {generatorRandomUser} from "../utils/dataGenerator.js"
 
-const authFile="testData/cookies.json"
-export async function loginAsAdmin(page) {
 
-    const credsFile = "testData/creds.json"
-    const data = JSON.parse(fs.readFileSync(credsFile, 'utf-8'))
+
+//login method
+export async function login(page, data, role) {
     const homeObj = new Home(page);
     await homeObj.clickOnLogin()
     const loginObj = new Login(page)
-    await loginObj.loginToSLT(data.admin.username, data.admin.password)
-   // await page.waitForTimeout(5000)
-    console.log("first name is:", data.admin.firstname)
-    await homeObj.verifyUsernamePanel(data.admin.username)
-
+    await loginObj.loginToSLT(data[role].username, data[role].password)
+    return data[role].firstname;
 }
-export async function loginAsStaff(page) {
-
-    const credsFile = "testData/creds.json"
-    const data = JSON.parse(fs.readFileSync(credsFile, 'utf-8'))
+//verify firstname after login method
+export async function verifyFirstName(page, firstname){
     const homeObj = new Home(page);
-    await homeObj.clickOnLogin()
-    const loginObj = new Login(page)
-    await loginObj.loginToSLT(data.staff.username, data.staff.password)
-    await page.waitForTimeout(5000)
-    console.log("first name is:", data.staff.firstname)
-    await homeObj.verifyUsernamePanel(data.staff.username)
-
+    console.log("first name to expect is:", firstname)
+    await homeObj.verifyUserFirstName(firstname)
 }
-export async function loginAsUser(page) {
+//register new user method
 
-    const credsFile = "testData/creds.json"
-    const data = JSON.parse(fs.readFileSync(credsFile, 'utf-8'))
+export async function registerUser(page) {
+    const registerObj = new Register(page)
+    const user= generatorRandomUser();
+    await registerObj.fillRegistrationForm(user.firstname, user.lastname, user.email, "0798665433", user.password, user.confirmpassword )
+    await page.waitForTimeout(3000)
+    await registerObj.clickRegisterButton();
+    await registerObj.verifyYourEmail()
+    return user.firstname;
+    
+}
+ export async function goToAdminPanel(page) {
     const homeObj = new Home(page);
-    await homeObj.clickOnLogin()
-    const loginObj = new Login(page)
-    await loginObj.loginToSLT(data.user.username, data.user.password)
-    await page.waitForTimeout(5000)
-    console.log("first name is:", data.user.firstname)
-    await homeObj.verifyUsernamePanel(data.user.username)
+    await homeObj.goToAdminPanel()
+ }
 
-}
+
+
+
+
 export async function logout(){
 
 }

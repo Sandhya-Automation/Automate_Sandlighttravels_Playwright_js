@@ -21,9 +21,9 @@ export class Register{
         this.verifyCheckEmailTxt=page.locator("//*[contains(text(),'Check your email')]")
     }
 
-    async fillRegistrationForm(name, last, email, phone, password, confirmPassword){
-        await this.nameField.fill(name)
-        await this.lastNameField.fill(last)
+    async fillRegistrationForm(firstName, lastName, email, phone, password, confirmPassword){
+        await this.nameField.fill(firstName)
+        await this.lastNameField.fill(lastName)
         await this.emailField.fill(email)
         await this.phoneField.fill(phone)
         await this.passwordField.fill(password)
